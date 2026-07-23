@@ -3,48 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pakhtachi Stone Group — Kimyo zavodlari qurilishi va montaji</title>
-<meta name="description" content="Kimyo sanoati obyektlarini to'liq tsiklda quramiz: uskuna montaji, kislota quvurlari, futerovka, kimyoviy chidamli qoplama va izolyatsiya. O'zbekiston bo'ylab.">
+<title id="metaTitle">Pakhtachi Stone Group — Kimyo zavodlari qurilishi va montaji</title>
+<meta name="description" id="metaDescription" content="Kimyo sanoati obyektlarini to'liq tsiklda quramiz: uskuna montaji, kislota quvurlari, futerovka, kimyoviy chidamli qoplama va izolyatsiya. O'zbekiston bo'ylab.">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/fonts.css">
 <link rel="stylesheet" href="assets/css/style.css">
+<noscript><style>.loader{display:none}.reveal{opacity:1;transform:none}</style></noscript>
+<script src="assets/js/i18n.js" defer></script>
 </head>
 <body>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__in">
+    <div class="loader__stripes"><i></i><i></i><i></i></div>
+    <b>Pakhtachi Stone Group</b>
+    <span class="loader__bar"><i id="loaderBar"></i></span>
+    <span class="loader__pct" id="loaderPct">00</span>
+  </div>
+</div>
+
+<div class="cursor" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"><span id="cursorLabel"></span></div>
 
 <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
 
 <!-- ================= HEADER ================= -->
 <header class="header" id="header">
   <div class="container header__in">
-    <a href="#top" class="brand" aria-label="Pakhtachi Stone Group — bosh sahifa">
+    <a href="#top" class="brand" aria-label="Pakhtachi Stone Group — bosh sahifa" data-i18n-aria-label="aria.brand">
       <span class="brand__mark" aria-hidden="true">
         <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="6" fill="#0E2050"/><path d="M0 8h40v3H0z" fill="url(#g1)" opacity=".9"/><path d="M0 14h40v2H0z" fill="url(#g1)" opacity=".55"/><path d="M0 19h40v1.4H0z" fill="url(#g1)" opacity=".3"/><text x="20" y="34" text-anchor="middle" font-family="'Big Shoulders Display',sans-serif" font-weight="800" font-size="15" fill="#EAF2FC" letter-spacing="1">PSG</text><defs><linearGradient id="g1" x1="0" y1="0" x2="40" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#41D9FF" stop-opacity="0"/><stop offset=".5" stop-color="#41D9FF"/><stop offset="1" stop-color="#9FF0FF"/></linearGradient></defs></svg>
       </span>
       <span class="brand__text">
         <b>Pakhtachi Stone Group</b>
-        <i>Sanoat qurilishi &amp; montaj</i>
+        <i data-i18n="brand.tagline">Sanoat qurilishi &amp; montaj</i>
       </span>
     </a>
 
-    <nav class="nav" id="nav" aria-label="Asosiy navigatsiya">
-      <a href="#about">Biz haqimizda</a>
-      <a href="#services">Xizmatlar</a>
-      <a href="#stages">Bosqichlar</a>
-      <a href="#projects">Obyektlar</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Aloqa</a>
+    <nav class="nav" id="nav" aria-label="Asosiy navigatsiya" data-i18n-aria-label="aria.nav">
+      <a href="#about" data-i18n="nav.about">Biz haqimizda</a>
+      <a href="#services" data-i18n="nav.services">Xizmatlar</a>
+      <a href="#stages" data-i18n="nav.stages">Bosqichlar</a>
+      <a href="#projects" data-i18n="nav.projects">Obyektlar</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="#contact" data-i18n="nav.contact">Aloqa</a>
       <div class="nav__extra">
         <a class="nav__phone" href="tel:+998907329999">+998 90 732-99-99</a>
-        <a class="btn btn--primary" href="#contact">Smeta olish</a>
+        <a class="btn btn--primary" href="#contact" data-i18n="nav.cta">Smeta olish</a>
+      </div>
+      <div class="nav__langs" id="langSwitch" role="group" aria-label="Til / Язык / Language">
+        <button type="button" data-lang="uz">UZ</button>
+        <button type="button" data-lang="uzc">ЎЗ</button>
+        <button type="button" data-lang="ru">РУ</button>
+        <button type="button" data-lang="zh">中文</button>
       </div>
     </nav>
 
     <div class="header__cta">
       <a class="header__phone" href="tel:+998907329999">+998 90 732-99-99</a>
-      <a class="btn btn--primary btn--sm" href="#contact">Smeta olish</a>
+      <a class="btn btn--primary btn--sm" href="#contact" data-i18n="nav.cta">Smeta olish</a>
     </div>
 
-    <button class="burger" id="burger" aria-label="Menyuni ochish" aria-expanded="false" aria-controls="nav">
+    <button class="burger" id="burger" aria-label="Menyuni ochish" aria-expanded="false" aria-controls="nav" data-i18n-aria-label="aria.burgerOpen">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -60,24 +80,24 @@
   <div class="hero__stripes" aria-hidden="true"><i></i><i></i><i></i></div>
 
   <div class="container hero__in">
-    <p class="label reveal" style="--d:0">O'zbekiston · Samarqand · 2016-yildan beri</p>
+    <p class="label reveal" style="--d:0" data-i18n="hero.kicker">O'zbekiston · Samarqand · 2016-yildan beri</p>
     <h1 class="hero__title">
-      <span class="reveal" style="--d:1">Kimyo zavodlari</span>
-      <span class="reveal" style="--d:2">qurilishi va <em>montaji</em></span>
-      <span class="hero__sub reveal" style="--d:3">loyihadan ishga tushirishgacha</span>
+      <span class="hero__line" data-i18n="hero.line1">Kimyo zavodlari</span>
+      <span class="hero__line" id="heroLine2">qurilishi va <em>montaji</em></span>
+      <span class="hero__line hero__sub" data-i18n="hero.line3">loyihadan ishga tushirishgacha</span>
     </h1>
-    <p class="hero__lead reveal" style="--d:4">Reaktor va kolonnalar, kislotaga chidamli quvur tizimlari, rezervuar montaji va futerovka, argon payvandlash, kimyoviy chidamli qoplamalar va izolyatsiya — kimyo zavodi uchun kerak bo'lgan hamma ish bitta pudratchida.</p>
+    <p class="hero__lead reveal" style="--d:4" data-i18n="hero.lead">Reaktor va kolonnalar, kislotaga chidamli quvur tizimlari, rezervuar montaji va futerovka, argon payvandlash, kimyoviy chidamli qoplamalar va izolyatsiya — kimyo zavodi uchun kerak bo'lgan hamma ish bitta pudratchida.</p>
     <div class="hero__actions reveal" style="--d:5">
-      <a class="btn btn--primary" href="#contact">Loyihani hisoblab berish</a>
-      <a class="btn btn--ghost" href="#services">Xizmatlar bilan tanishish</a>
+      <a class="btn btn--primary" href="#contact" data-i18n="hero.cta1">Loyihani hisoblab berish</a>
+      <a class="btn btn--ghost" href="#services" data-i18n="hero.cta2">Xizmatlar bilan tanishish</a>
     </div>
   </div>
 
   <div class="container hero__stats reveal" style="--d:6">
-    <div class="stat"><b class="stat__num" data-count="2016" data-plain="1">0</b><span>yildan beri sanoat montajida</span></div>
-    <div class="stat"><b class="stat__num" data-count="50" data-suffix="+">0</b><span>xodim — o'z shtatimizda</span></div>
-    <div class="stat"><b class="stat__num" data-count="5" data-suffix="+">0</b><span>muhandis va texnik mutaxassis</span></div>
-    <div class="stat"><b class="stat__num" data-count="20" data-suffix="%">0</b><span>gacha energiya tejamkorligi</span></div>
+    <div class="stat"><b class="stat__num" data-count="2016" data-plain="1">0</b><span data-i18n="hero.stat1">yildan beri sanoat montajida</span></div>
+    <div class="stat"><b class="stat__num" data-count="50" data-suffix="+">0</b><span data-i18n="hero.stat2">xodim — o'z shtatimizda</span></div>
+    <div class="stat"><b class="stat__num" data-count="5" data-suffix="+">0</b><span data-i18n="hero.stat3">muhandis va texnik mutaxassis</span></div>
+    <div class="stat"><b class="stat__num" data-count="20" data-suffix="%">0</b><span data-i18n="hero.stat4">gacha energiya tejamkorligi</span></div>
   </div>
 </section>
 
@@ -92,28 +112,28 @@
 <!-- ================= ABOUT ================= -->
 <section class="section" id="about">
   <div class="container">
-    <div class="section__head reveal">
-      <p class="label">01 — Biz haqimizda</p>
-      <h2>Sanoat obyektlari uchun<br><em>to'liq tsiklli pudratchi</em></h2>
+    <div class="section__head reveal" data-num="01">
+      <p class="label" data-i18n="about.label">01 — Biz haqimizda</p>
+      <h2 data-i18n-h2="about">Sanoat obyektlari uchun<br><em>to'liq tsiklli pudratchi</em></h2>
     </div>
 
     <div class="about">
       <div class="about__text reveal">
-        <p class="about__lead">«Pakhtachi Stone Group» — sanoat obyektlarida qurilish-montaj ishlarini bajaruvchi pudrat tashkiloti. Metallokonstruksiya montaji, payvandlash, quvur tizimlari, rezervuar va uskuna montaji, antikorroziy himoya, izolyatsiya va lesa ishlari — bularning barchasi bizning kundalik ishimiz.</p>
-        <p>Bugun biz kuchimizni ongli ravishda <b>kimyo sanoati obyektlariga</b> yo'naltirmoqdamiz. Sababi oddiy: kimyo zavodi talab qiladigan ishlar — aynan biz bajaradigan ishlar, faqat ular yuqori talablar va agressiv muhit sharoitida bajariladi. Shu yo'nalish bo'yicha jamoamizni tayyorlayapmiz, material va texnologiya bazasini shakllantiryapmiz.</p>
-        <p>Texnik izolyatsiya sohasida esa kompaniya sanoat qurilmalari uchun issiqlik, sovuq, tovush va yong'in himoyasidan tortib gaz turbinalari uchun maxsus izolyatsiyagacha bo'lgan barcha xizmatlarni taklif etadi. Yevropa va MDH davlatlaridagi hamkorlar bilan ishlaymiz.</p>
-        <p class="about__principle">Tamoyilimiz: obyekt vaqtida, loyiha bo'yicha va <em>xavfsiz</em> topshirilishi kerak.</p>
+        <p class="about__lead" data-i18n="about.lead">«Pakhtachi Stone Group» — sanoat obyektlarida qurilish-montaj ishlarini bajaruvchi pudrat tashkiloti. Metallokonstruksiya montaji, payvandlash, quvur tizimlari, rezervuar va uskuna montaji, antikorroziy himoya, izolyatsiya va lesa ishlari — bularning barchasi bizning kundalik ishimiz.</p>
+        <p data-i18n-html="about.p1">Bugun biz kuchimizni ongli ravishda <b>kimyo sanoati obyektlariga</b> yo'naltirmoqdamiz. Sababi oddiy: kimyo zavodi talab qiladigan ishlar — aynan biz bajaradigan ishlar, faqat ular yuqori talablar va agressiv muhit sharoitida bajariladi. Shu yo'nalish bo'yicha jamoamizni tayyorlayapmiz, material va texnologiya bazasini shakllantiryapmiz.</p>
+        <p data-i18n="about.p2">Texnik izolyatsiya sohasida esa kompaniya sanoat qurilmalari uchun issiqlik, sovuq, tovush va yong'in himoyasidan tortib gaz turbinalari uchun maxsus izolyatsiyagacha bo'lgan barcha xizmatlarni taklif etadi. Yevropa va MDH davlatlaridagi hamkorlar bilan ishlaymiz.</p>
+        <p class="about__principle" data-i18n-html="about.principle">Tamoyilimiz: obyekt vaqtida, loyiha bo'yicha va <em>xavfsiz</em> topshirilishi kerak.</p>
       </div>
 
       <div class="about__side reveal">
         <figure class="about__photo">
-          <img src="assets/img/p-pipes-valves.jpg" alt="Texnologik quvurlar izolyatsiyasi — Pakhtachi Stone Group obyekti" loading="lazy">
+          <img src="assets/img/p-pipes-valves.jpg" alt="Texnologik quvurlar izolyatsiyasi — Pakhtachi Stone Group obyekti" loading="lazy" data-i18n-alt="about.photoAlt">
         </figure>
         <ul class="about__points">
-          <li>Sanoat qurilishida ishonchli hamkor</li>
-          <li>Xalqaro standartlarga mos yuqori sifatli xizmatlar</li>
-          <li>Samaradorlik, energiya tejash va xavfsizlikni oshiruvchi yechimlar</li>
-          <li>Bitta shartnoma — bitta javobgarlik</li>
+          <li data-i18n="about.points.0">Sanoat qurilishida ishonchli hamkor</li>
+          <li data-i18n="about.points.1">Xalqaro standartlarga mos yuqori sifatli xizmatlar</li>
+          <li data-i18n="about.points.2">Samaradorlik, energiya tejash va xavfsizlikni oshiruvchi yechimlar</li>
+          <li data-i18n="about.points.3">Bitta shartnoma — bitta javobgarlik</li>
         </ul>
       </div>
     </div>
@@ -123,198 +143,197 @@
 <!-- ================= SERVICES ================= -->
 <section class="section section--alt" id="services">
   <div class="container">
-    <div class="section__head reveal">
-      <p class="label">02 — Xizmatlar</p>
-      <h2>Kimyo zavodi uchun kerak bo'lgan<br><em>hamma ish — bitta pudratchida</em></h2>
+    <div class="section__head reveal" data-num="02">
+      <p class="label" data-i18n="services.label">02 — Xizmatlar</p>
+      <h2 data-i18n-h2="services">Kimyo zavodi uchun kerak bo'lgan<br><em>hamma ish — bitta pudratchida</em></h2>
     </div>
 
     <div class="services" id="servicesAcc">
 
       <details class="srv reveal">
-        <summary><span class="srv__num">01</span><span class="srv__name">Quvur o'tkazgichlar montaji</span><span class="srv__tag">Agressiv muhitlar</span><span class="srv__plus" aria-hidden="true"></span></summary>
+        <summary><span class="srv__num">01</span><span class="srv__name" data-i18n="services.items.0.name">Quvur o'tkazgichlar montaji</span><span class="srv__tag" data-i18n="services.items.0.tag">Agressiv muhitlar</span><span class="srv__plus" aria-hidden="true"></span></summary>
         <div class="srv__body"><div class="srv__grid">
-          <p>Kimyo zavodida quvur tizimi eng zaif nuqta: materiali noto'g'ri tanlangan bitta uchastka butun liniyani to'xtatadi. Biz quvurni muhitga, haroratga va konsentratsiyaga qarab tanlaymiz.</p>
+          <p data-i18n="services.items.0.body">Kimyo zavodida quvur tizimi eng zaif nuqta: materiali noto'g'ri tanlangan bitta uchastka butun liniyani to'xtatadi. Biz quvurni muhitga, haroratga va konsentratsiyaga qarab tanlaymiz.</p>
           <ul>
-            <li>Kislota va ishqor quvurlari (H₂SO₄, HNO₃, H₃PO₄, NaOH)</li>
-            <li>Nerjaveyka tizimlari — AISI 304, 316L, 321, duplex</li>
-            <li>Polimer quvurlar: PP, PVDF, PE100, PVX</li>
-            <li>Futerovkalangan quvurlar (rezina, ftoroplast, emal)</li>
-            <li>Zapor-tartibga soluvchi armatura montaji</li>
-            <li>Gidravlik va pnevmatik sinov, passivatsiya, markirovka</li>
+            <li data-i18n="services.items.0.li.0">Kislota va ishqor quvurlari (H₂SO₄, HNO₃, H₃PO₄, NaOH)</li>
+            <li data-i18n="services.items.0.li.1">Nerjaveyka tizimlari — AISI 304, 316L, 321, duplex</li>
+            <li data-i18n="services.items.0.li.2">Polimer quvurlar: PP, PVDF, PE100, PVX</li>
+            <li data-i18n="services.items.0.li.3">Futerovkalangan quvurlar (rezina, ftoroplast, emal)</li>
+            <li data-i18n="services.items.0.li.4">Zapor-tartibga soluvchi armatura montaji</li>
+            <li data-i18n="services.items.0.li.5">Gidravlik va pnevmatik sinov, passivatsiya, markirovka</li>
           </ul>
         </div></div>
       </details>
 
       <details class="srv reveal">
-        <summary><span class="srv__num">02</span><span class="srv__name">Uskunalar montaji</span><span class="srv__tag">Reaktor · Kolonna</span><span class="srv__plus" aria-hidden="true"></span></summary>
+        <summary><span class="srv__num">02</span><span class="srv__name" data-i18n="services.items.1.name">Uskunalar montaji</span><span class="srv__tag" data-i18n="services.items.1.tag">Reaktor · Kolonna</span><span class="srv__plus" aria-hidden="true"></span></summary>
         <div class="srv__body"><div class="srv__grid">
-          <p>Reaktor, kolonna, issiqlik almashtirgich — kimyo zavodining yuragi. O'rnatish aniqligi millimetrlarda o'lchanadi, ko'tarish sxemasi oldindan ishlab chiqiladi va tasdiqlanadi.</p>
+          <p data-i18n="services.items.1.body">Reaktor, kolonna, issiqlik almashtirgich — kimyo zavodining yuragi. O'rnatish aniqligi millimetrlarda o'lchanadi, ko'tarish sxemasi oldindan ishlab chiqiladi va tasdiqlanadi.</p>
           <ul>
-            <li>Reaktor, kolonna, absorber va skrubberlarni o'rnatish</li>
-            <li>Issiqlik almashtirgich, sushilka, granulyator, filtr</li>
-            <li>Nasos, kompressor va gaz tozalash uskunalari</li>
-            <li>Lazerli asbob bilan sentrovka, ankerlash va podliv</li>
-            <li>Obvyazka, KIPiA ulash, sinash va ishga tushirish</li>
-            <li>To'xtatish remonti oynasida ishlash tajribasi</li>
+            <li data-i18n="services.items.1.li.0">Reaktor, kolonna, absorber va skrubberlarni o'rnatish</li>
+            <li data-i18n="services.items.1.li.1">Issiqlik almashtirgich, sushilka, granulyator, filtr</li>
+            <li data-i18n="services.items.1.li.2">Nasos, kompressor va gaz tozalash uskunalari</li>
+            <li data-i18n="services.items.1.li.3">Lazerli asbob bilan sentrovka, ankerlash va podliv</li>
+            <li data-i18n="services.items.1.li.4">Obvyazka, KIPiA ulash, sinash va ishga tushirish</li>
+            <li data-i18n="services.items.1.li.5">To'xtatish remonti oynasida ishlash tajribasi</li>
           </ul>
         </div></div>
       </details>
 
       <details class="srv reveal">
-        <summary><span class="srv__num">03</span><span class="srv__name">Rezervuarlar montaji</span><span class="srv__tag">RVS · RGS</span><span class="srv__plus" aria-hidden="true"></span></summary>
+        <summary><span class="srv__num">03</span><span class="srv__name" data-i18n="services.items.2.name">Rezervuarlar montaji</span><span class="srv__tag" data-i18n="services.items.2.tag">RVS · RGS</span><span class="srv__plus" aria-hidden="true"></span></summary>
         <div class="srv__body"><div class="srv__grid">
-          <p>Kislota, ishqor va reagent saqlash sig'imi — bosim, agressiv muhit va ekologik xavf birlashgan obyekt. Payvand choki ham, ichki qoplama ham bir xil darajada muhim.</p>
+          <p data-i18n="services.items.2.body">Kislota, ishqor va reagent saqlash sig'imi — bosim, agressiv muhit va ekologik xavf birlashgan obyekt. Payvand choki ham, ichki qoplama ham bir xil darajada muhim.</p>
           <ul>
-            <li>Vertikal va gorizontal po'lat rezervuarlar (RVS, RGS)</li>
-            <li>Nerjaveykadan sig'imlar, mikser va reaktorlar</li>
-            <li>Polipropilen va shishaplastik (FRP/GRP) sig'imlar</li>
-            <li>Ichki futerovka: gummirovka, ftoroplast, kislotaga chidamli g'isht</li>
-            <li>Germetiklik sinovi, uchqun bilan qoplama nazorati</li>
-            <li>Tozalash, remont, tubini va devor poyasini almashtirish</li>
+            <li data-i18n="services.items.2.li.0">Vertikal va gorizontal po'lat rezervuarlar (RVS, RGS)</li>
+            <li data-i18n="services.items.2.li.1">Nerjaveykadan sig'imlar, mikser va reaktorlar</li>
+            <li data-i18n="services.items.2.li.2">Polipropilen va shishaplastik (FRP/GRP) sig'imlar</li>
+            <li data-i18n="services.items.2.li.3">Ichki futerovka: gummirovka, ftoroplast, kislotaga chidamli g'isht</li>
+            <li data-i18n="services.items.2.li.4">Germetiklik sinovi, uchqun bilan qoplama nazorati</li>
+            <li data-i18n="services.items.2.li.5">Tozalash, remont, tubini va devor poyasini almashtirish</li>
           </ul>
         </div></div>
       </details>
 
       <details class="srv reveal">
-        <summary><span class="srv__num">04</span><span class="srv__name">Metallokonstruksiyalar</span><span class="srv__tag">Ishlab chiqarish + montaj</span><span class="srv__plus" aria-hidden="true"></span></summary>
+        <summary><span class="srv__num">04</span><span class="srv__name" data-i18n="services.items.3.name">Metallokonstruksiyalar</span><span class="srv__tag" data-i18n="services.items.3.tag">Ishlab chiqarish + montaj</span><span class="srv__plus" aria-hidden="true"></span></summary>
         <div class="srv__body"><div class="srv__grid">
-          <p>Kimyo zavodida metall karkas doimo agressiv atmosferada ishlaydi. Konstruksiyani nafaqat mustahkam, balki C5/CX darajada himoyalangan holda topshiramiz.</p>
+          <p data-i18n="services.items.3.body">Kimyo zavodida metall karkas doimo agressiv atmosferada ishlaydi. Konstruksiyani nafaqat mustahkam, balki C5/CX darajada himoyalangan holda topshiramiz.</p>
           <ul>
-            <li>Sanoat binolari va sexlar karkasi</li>
-            <li>Apparatlar uchun etajerka, quvur estakadalari</li>
-            <li>Xizmat maydonchalari, zinapoya, ograjdeniya</li>
-            <li>Bunker, silos va konveyer galereyalari</li>
-            <li>Nerjaveyka va alyuminiy konstruksiyalar</li>
-            <li>Geodezik nazorat bilan montaj</li>
+            <li data-i18n="services.items.3.li.0">Sanoat binolari va sexlar karkasi</li>
+            <li data-i18n="services.items.3.li.1">Apparatlar uchun etajerka, quvur estakadalari</li>
+            <li data-i18n="services.items.3.li.2">Xizmat maydonchalari, zinapoya, ograjdeniya</li>
+            <li data-i18n="services.items.3.li.3">Bunker, silos va konveyer galereyalari</li>
+            <li data-i18n="services.items.3.li.4">Nerjaveyka va alyuminiy konstruksiyalar</li>
+            <li data-i18n="services.items.3.li.5">Geodezik nazorat bilan montaj</li>
           </ul>
         </div></div>
       </details>
 
       <details class="srv reveal">
-        <summary><span class="srv__num">05</span><span class="srv__name">Argon payvandlash (TIG)</span><span class="srv__tag">Nerjaveyka · Po'lat</span><span class="srv__plus" aria-hidden="true"></span></summary>
+        <summary><span class="srv__num">05</span><span class="srv__name" data-i18n="services.items.4.name">Argon payvandlash (TIG)</span><span class="srv__tag" data-i18n="services.items.4.tag">Nerjaveyka · Po'lat</span><span class="srv__plus" aria-hidden="true"></span></summary>
         <div class="srv__body"><div class="srv__grid">
-          <p>Mas'uliyatli liniyalarda ildiz chokini argonda, to'ldirishni elektrod yoki yarim avtomat bilan bajaramiz — chok ichkaridan silliq chiqadi, oqim buzilmaydi.</p>
+          <p data-i18n="services.items.4.body">Mas'uliyatli liniyalarda ildiz chokini argonda, to'ldirishni elektrod yoki yarim avtomat bilan bajaramiz — chok ichkaridan silliq chiqadi, oqim buzilmaydi.</p>
           <ul>
-            <li>AISI 304, 316L, 321, duplex payvandlash</li>
-            <li>Ichkariga argon puflash (podduv) bilan ildiz choki</li>
-            <li>Alyuminiy, titan, mis va maxsus qotishmalar</li>
-            <li>Choklarni travleniye va passivatsiya qilish</li>
-            <li>Impuls (KIPiA) liniyalari — to'liq argonda</li>
-            <li>Attestatsiyadan o'tgan payvandchilar</li>
+            <li data-i18n="services.items.4.li.0">AISI 304, 316L, 321, duplex payvandlash</li>
+            <li data-i18n="services.items.4.li.1">Ichkariga argon puflash (podduv) bilan ildiz choki</li>
+            <li data-i18n="services.items.4.li.2">Alyuminiy, titan, mis va maxsus qotishmalar</li>
+            <li data-i18n="services.items.4.li.3">Choklarni travleniye va passivatsiya qilish</li>
+            <li data-i18n="services.items.4.li.4">Impuls (KIPiA) liniyalari — to'liq argonda</li>
+            <li data-i18n="services.items.4.li.5">Attestatsiyadan o'tgan payvandchilar</li>
           </ul>
         </div></div>
       </details>
 
       <details class="srv reveal">
-        <summary><span class="srv__num">06</span><span class="srv__name">Elektr payvandlash</span><span class="srv__tag">MMA · MIG/MAG</span><span class="srv__plus" aria-hidden="true"></span></summary>
+        <summary><span class="srv__num">06</span><span class="srv__name" data-i18n="services.items.5.name">Elektr payvandlash</span><span class="srv__tag" data-i18n="services.items.5.tag">MMA · MIG/MAG</span><span class="srv__plus" aria-hidden="true"></span></summary>
         <div class="srv__body"><div class="srv__grid">
-          <p>Har bir mas'uliyatli chok raqamlanadi va payvandchiga biriktiriladi, VIK o'tkaziladi, talab bo'lsa — buzmaydigan nazorat (RK/UZK).</p>
+          <p data-i18n="services.items.5.body">Har bir mas'uliyatli chok raqamlanadi va payvandchiga biriktiriladi, VIK o'tkaziladi, talab bo'lsa — buzmaydigan nazorat (RK/UZK).</p>
           <ul>
-            <li>Qo'lda dugali payvandlash (MMA/RDS)</li>
-            <li>Yarim avtomat payvandlash (MIG/MAG)</li>
-            <li>Balandlikda montaj payvandlashi</li>
-            <li>Qalin devorli apparatlarni ko'p qatlamli payvandlash</li>
-            <li>Korroziyaga uchragan uchastkalarni tiklash</li>
-            <li>Ex-zonalarda olovli ishlar — naryad-dopusk bilan</li>
+            <li data-i18n="services.items.5.li.0">Qo'lda dugali payvandlash (MMA/RDS)</li>
+            <li data-i18n="services.items.5.li.1">Yarim avtomat payvandlash (MIG/MAG)</li>
+            <li data-i18n="services.items.5.li.2">Balandlikda montaj payvandlashi</li>
+            <li data-i18n="services.items.5.li.3">Qalin devorli apparatlarni ko'p qatlamli payvandlash</li>
+            <li data-i18n="services.items.5.li.4">Korroziyaga uchragan uchastkalarni tiklash</li>
+            <li data-i18n="services.items.5.li.5">Ex-zonalarda olovli ishlar — naryad-dopusk bilan</li>
           </ul>
         </div></div>
       </details>
 
       <details class="srv reveal">
-        <summary><span class="srv__num">07</span><span class="srv__name">Peskostruy tozalash</span><span class="srv__tag">Sa 2½ · ISO 8501</span><span class="srv__plus" aria-hidden="true"></span></summary>
+        <summary><span class="srv__num">07</span><span class="srv__name" data-i18n="services.items.6.name">Peskostruy tozalash</span><span class="srv__tag" data-i18n="services.items.6.tag">Sa 2½ · ISO 8501</span><span class="srv__plus" aria-hidden="true"></span></summary>
         <div class="srv__body"><div class="srv__grid">
-          <p>Bo'yoq va futerovkaning 80% muvaffaqiyati — bu tozalash. Agressiv muhit har qanday zaif adgeziyani bir necha oyda ochib tashlaydi.</p>
+          <p data-i18n="services.items.6.body">Bo'yoq va futerovkaning 80% muvaffaqiyati — bu tozalash. Agressiv muhit har qanday zaif adgeziyani bir necha oyda ochib tashlaydi.</p>
           <ul>
-            <li>Sa 2 — Sa 2½ — Sa 3 darajasigacha tozalash</li>
-            <li>Rezervuar ichi va tashqarisini futerovkaga tayyorlash</li>
-            <li>Beton yuzalarni tozalash</li>
-            <li>Nerjaveyka uchun temirsiz abraziv</li>
-            <li>Rz g'adir-budurlik, chang va tuz qoldiqlari nazorati</li>
-            <li>Metall harorati — shabnam nuqtasidan kamida 3°C yuqori</li>
+            <li data-i18n="services.items.6.li.0">Sa 2 — Sa 2½ — Sa 3 darajasigacha tozalash</li>
+            <li data-i18n="services.items.6.li.1">Rezervuar ichi va tashqarisini futerovkaga tayyorlash</li>
+            <li data-i18n="services.items.6.li.2">Beton yuzalarni tozalash</li>
+            <li data-i18n="services.items.6.li.3">Nerjaveyka uchun temirsiz abraziv</li>
+            <li data-i18n="services.items.6.li.4">Rz g'adir-budurlik, chang va tuz qoldiqlari nazorati</li>
+            <li data-i18n="services.items.6.li.5">Metall harorati — shabnam nuqtasidan kamida 3°C yuqori</li>
           </ul>
         </div></div>
       </details>
 
       <details class="srv reveal">
-        <summary><span class="srv__num">08</span><span class="srv__name">Kimyoviy chidamli qoplamalar</span><span class="srv__tag">C5-I / CX</span><span class="srv__plus" aria-hidden="true"></span></summary>
+        <summary><span class="srv__num">08</span><span class="srv__name" data-i18n="services.items.7.name">Kimyoviy chidamli qoplamalar</span><span class="srv__tag" data-i18n="services.items.7.tag">C5-I / CX</span><span class="srv__plus" aria-hidden="true"></span></summary>
         <div class="srv__body"><div class="srv__grid">
-          <p>Kimyo zavodi atmosferasi ISO 12944 bo'yicha odatda C5-I yoki CX kategoriyaga kiradi — eng og'ir sharoit. Bu yerda oddiy emal ishlamaydi.</p>
+          <p data-i18n="services.items.7.body">Kimyo zavodi atmosferasi ISO 12944 bo'yicha odatda C5-I yoki CX kategoriyaga kiradi — eng og'ir sharoit. Bu yerda oddiy emal ishlamaydi.</p>
           <ul>
-            <li>Sink grunt + epoksid + poliuretan tizimlari</li>
-            <li>Vinilefir, epoksid-fenol, novolak qoplamalar</li>
-            <li>Rezervuarlarni ichki qoplash</li>
-            <li>Issiqlikka chidamli qoplamalar (200–600°C)</li>
-            <li>Kimyoviy chidamli sanoat pollari</li>
-            <li>DFT nazorati va uchqun defektoskopiyasi</li>
+            <li data-i18n="services.items.7.li.0">Sink grunt + epoksid + poliuretan tizimlari</li>
+            <li data-i18n="services.items.7.li.1">Vinilefir, epoksid-fenol, novolak qoplamalar</li>
+            <li data-i18n="services.items.7.li.2">Rezervuarlarni ichki qoplash</li>
+            <li data-i18n="services.items.7.li.3">Issiqlikka chidamli qoplamalar (200–600°C)</li>
+            <li data-i18n="services.items.7.li.4">Kimyoviy chidamli sanoat pollari</li>
+            <li data-i18n="services.items.7.li.5">DFT nazorati va uchqun defektoskopiyasi</li>
           </ul>
         </div></div>
       </details>
 
       <details class="srv reveal">
-        <summary><span class="srv__num">09</span><span class="srv__name">Sanoat izolyatsiyasi</span><span class="srv__tag">Issiqlik · Sovuq · CUI</span><span class="srv__plus" aria-hidden="true"></span></summary>
+        <summary><span class="srv__num">09</span><span class="srv__name" data-i18n="services.items.8.name">Sanoat izolyatsiyasi</span><span class="srv__tag" data-i18n="services.items.8.tag">Issiqlik · Sovuq · CUI</span><span class="srv__plus" aria-hidden="true"></span></summary>
         <div class="srv__body"><div class="srv__grid">
-          <p>Energiya tejash, texnologik rejim, xodimlarni himoya qilish — va metallni izolyatsiya ostidagi korroziyadan (CUI) saqlash. Turbina izolyatsiyasi bo'yicha alohida tajribamiz bor.</p>
+          <p data-i18n="services.items.8.body">Energiya tejash, texnologik rejim, xodimlarni himoya qilish — va metallni izolyatsiya ostidagi korroziyadan (CUI) saqlash. Turbina izolyatsiyasi bo'yicha alohida tajribamiz bor.</p>
           <ul>
-            <li>Quvur, reaktor va rezervuar izolyatsiyasi</li>
-            <li>Gaz va bug' turbinalari uchun matras izolyatsiya</li>
-            <li>Sovuq izolyatsiya: ammiak, freon liniyalari — bug' to'sig'i bilan</li>
-            <li>Materiallar: bazalt vata, PPU, foamglass, keramik vata</li>
-            <li>Qoplama qatlam: o'z stanogimizda o'lchov bo'yicha</li>
-            <li>Elektr isitish (obogrev) va sovuqdan himoya tizimlari</li>
+            <li data-i18n="services.items.8.li.0">Quvur, reaktor va rezervuar izolyatsiyasi</li>
+            <li data-i18n="services.items.8.li.1">Gaz va bug' turbinalari uchun matras izolyatsiya</li>
+            <li data-i18n="services.items.8.li.2">Sovuq izolyatsiya: ammiak, freon liniyalari — bug' to'sig'i bilan</li>
+            <li data-i18n="services.items.8.li.3">Materiallar: bazalt vata, PPU, foamglass, keramik vata</li>
+            <li data-i18n="services.items.8.li.4">Qoplama qatlam: o'z stanogimizda o'lchov bo'yicha</li>
+            <li data-i18n="services.items.8.li.5">Elektr isitish (obogrev) va sovuqdan himoya tizimlari</li>
           </ul>
         </div></div>
       </details>
 
       <details class="srv reveal">
-        <summary><span class="srv__num">10</span><span class="srv__name">Sanoat lesa montaji</span><span class="srv__tag">Montaj + ijara</span><span class="srv__plus" aria-hidden="true"></span></summary>
+        <summary><span class="srv__num">10</span><span class="srv__name" data-i18n="services.items.9.name">Sanoat lesa montaji</span><span class="srv__tag" data-i18n="services.items.9.tag">Montaj + ijara</span><span class="srv__plus" aria-hidden="true"></span></summary>
         <div class="srv__body"><div class="srv__grid">
-          <p>Sanoat, maxsus va fasad lesalarining to'liq turlarini taklif qilamiz — alohida obyektlar, yirik loyihalar va uzoq muddatli shartnomalar uchun.</p>
+          <p data-i18n="services.items.9.body">Sanoat, maxsus va fasad lesalarining to'liq turlarini taklif qilamiz — alohida obyektlar, yirik loyihalar va uzoq muddatli shartnomalar uchun.</p>
           <ul>
-            <li>Ramali, xomutli, klinovoy va modulli tizimlar</li>
-            <li>Reaktor, kolonna va pech atrofida lesa</li>
-            <li>Osma lesa va konsolli maydonchalar</li>
-            <li>Yuk ko'targichlar — 2 000 kg gacha, 120 m gacha</li>
-            <li>Lesa ijarasi — montaj va demontaj bilan</li>
-            <li>Har bir lesa birka bilan qabul qilinadi</li>
+            <li data-i18n="services.items.9.li.0">Ramali, xomutli, klinovoy va modulli tizimlar</li>
+            <li data-i18n="services.items.9.li.1">Reaktor, kolonna va pech atrofida lesa</li>
+            <li data-i18n="services.items.9.li.2">Osma lesa va konsolli maydonchalar</li>
+            <li data-i18n="services.items.9.li.3">Yuk ko'targichlar — 2 000 kg gacha, 120 m gacha</li>
+            <li data-i18n="services.items.9.li.4">Lesa ijarasi — montaj va demontaj bilan</li>
+            <li data-i18n="services.items.9.li.5">Har bir lesa birka bilan qabul qilinadi</li>
           </ul>
         </div></div>
       </details>
 
       <details class="srv reveal">
-        <summary><span class="srv__num">11</span><span class="srv__name">Kislotaga chidamli futerovka</span><span class="srv__tag">Plitka · G'isht</span><span class="srv__plus" aria-hidden="true"></span></summary>
+        <summary><span class="srv__num">11</span><span class="srv__name" data-i18n="services.items.10.name">Kislotaga chidamli futerovka</span><span class="srv__tag" data-i18n="services.items.10.tag">Plitka · G'isht</span><span class="srv__plus" aria-hidden="true"></span></summary>
         <div class="srv__body"><div class="srv__grid">
-          <p>Yuqori konsentratsiya, harorat va mexanik yuk bo'lgan joyda plitka-g'isht futerovkasi eng ishonchli yechim — u o'nlab yillar xizmat qiladi. Devorlarga ham, eng og'ir sharoitdagi tag qismiga ham teramiz.</p>
+          <p data-i18n="services.items.10.body">Yuqori konsentratsiya, harorat va mexanik yuk bo'lgan joyda plitka-g'isht futerovkasi eng ishonchli yechim — u o'nlab yillar xizmat qiladi. Devorlarga ham, eng og'ir sharoitdagi tag qismiga ham teramiz.</p>
           <ul>
-            <li>Kislota rezervuarlari ichki futerovkasi</li>
-            <li>Neytralizatsiya vannalari, priyomnik va zumpflar</li>
-            <li>Diabaz plitka, KKG, shamot va uglerodli g'isht</li>
-            <li>Silikat, furan, epoksid, vinilefir zamazkalari</li>
-            <li>Germetik podsloy: gummirovka yoki epoksid bariyer</li>
-            <li>Uchqun/vakuum nazorati, suv bilan sinov</li>
+            <li data-i18n="services.items.10.li.0">Kislota rezervuarlari ichki futerovkasi</li>
+            <li data-i18n="services.items.10.li.1">Neytralizatsiya vannalari, priyomnik va zumpflar</li>
+            <li data-i18n="services.items.10.li.2">Diabaz plitka, KKG, shamot va uglerodli g'isht</li>
+            <li data-i18n="services.items.10.li.3">Silikat, furan, epoksid, vinilefir zamazkalari</li>
+            <li data-i18n="services.items.10.li.4">Germetik podsloy: gummirovka yoki epoksid bariyer</li>
+            <li data-i18n="services.items.10.li.5">Uchqun/vakuum nazorati, suv bilan sinov</li>
           </ul>
         </div></div>
       </details>
 
     </div>
-  </div>
-</section>
+  </div></section>
 
 <!-- ================= STAGES ================= -->
 <section class="section" id="stages">
   <div class="container">
-    <div class="section__head reveal">
-      <p class="label">03 — Qurilish bosqichlari</p>
-      <h2>Obyektni texnologik zanjir<br><em>sifatida qabul qilamiz</em></h2>
+    <div class="section__head reveal" data-num="03">
+      <p class="label" data-i18n="stages.label">03 — Qurilish bosqichlari</p>
+      <h2 data-i18n-h2="stages">Obyektni texnologik zanjir<br><em>sifatida qabul qilamiz</em></h2>
     </div>
 
     <ol class="stages">
-      <li class="stage reveal"><b>01</b><h3>Loyiha va tayyorgarlik</h3><p>Obyektni ko'rish, muhitlar ro'yxatini o'rganish, materiallarni moslab tanlash, smeta va grafik.</p></li>
-      <li class="stage reveal"><b>02</b><h3>Poydevor va yer osti qismi</h3><p>Fundament va ankerlar, kislotaga chidamli poddonlar, drenaj va oqava tizimi.</p></li>
-      <li class="stage reveal"><b>03</b><h3>Metall karkas</h3><p>Kolonna va ferma montaji, quvur estakadalari, etajerka va maydonchalar.</p></li>
-      <li class="stage reveal"><b>04</b><h3>Uskunalar montaji</h3><p>Reaktor, kolonna, issiqlik almashtirgich, nasos va kompressorlar. Aniq sentrovka.</p></li>
-      <li class="stage reveal"><b>05</b><h3>Quvur tizimlari</h3><p>Har bir muhit uchun o'z liniyasi. Armatura, kompensator, sinov va markirovka.</p></li>
-      <li class="stage reveal"><b>06</b><h3>Himoya qatlamlari</h3><p>Futerovka, antikorroziy tizim, issiqlik va sovuq izolyatsiyasi, CUI himoyasi.</p></li>
-      <li class="stage reveal"><b>07</b><h3>Sinov va topshirish</h3><p>Gidravlik va pnevmatik sinov, yuvish, bo'sh yurishda sinash, ijro hujjatlari.</p></li>
+      <li class="stage reveal"><b>01</b><h3 data-i18n="stages.items.0.title">Loyiha va tayyorgarlik</h3><p data-i18n="stages.items.0.desc">Obyektni ko'rish, muhitlar ro'yxatini o'rganish, materiallarni moslab tanlash, smeta va grafik.</p></li>
+      <li class="stage reveal"><b>02</b><h3 data-i18n="stages.items.1.title">Poydevor va yer osti qismi</h3><p data-i18n="stages.items.1.desc">Fundament va ankerlar, kislotaga chidamli poddonlar, drenaj va oqava tizimi.</p></li>
+      <li class="stage reveal"><b>03</b><h3 data-i18n="stages.items.2.title">Metall karkas</h3><p data-i18n="stages.items.2.desc">Kolonna va ferma montaji, quvur estakadalari, etajerka va maydonchalar.</p></li>
+      <li class="stage reveal"><b>04</b><h3 data-i18n="stages.items.3.title">Uskunalar montaji</h3><p data-i18n="stages.items.3.desc">Reaktor, kolonna, issiqlik almashtirgich, nasos va kompressorlar. Aniq sentrovka.</p></li>
+      <li class="stage reveal"><b>05</b><h3 data-i18n="stages.items.4.title">Quvur tizimlari</h3><p data-i18n="stages.items.4.desc">Har bir muhit uchun o'z liniyasi. Armatura, kompensator, sinov va markirovka.</p></li>
+      <li class="stage reveal"><b>06</b><h3 data-i18n="stages.items.5.title">Himoya qatlamlari</h3><p data-i18n="stages.items.5.desc">Futerovka, antikorroziy tizim, issiqlik va sovuq izolyatsiyasi, CUI himoyasi.</p></li>
+      <li class="stage reveal"><b>07</b><h3 data-i18n="stages.items.6.title">Sinov va topshirish</h3><p data-i18n="stages.items.6.desc">Gidravlik va pnevmatik sinov, yuvish, bo'sh yurishda sinash, ijro hujjatlari.</p></li>
     </ol>
   </div>
 </section>
@@ -322,19 +341,19 @@
 <!-- ================= INDUSTRIES ================= -->
 <section class="section section--alt" id="industries">
   <div class="container">
-    <div class="section__head reveal">
-      <p class="label">04 — Yo'nalishlar</p>
-      <h2>Kimyo sanoatining qaysi<br><em>yo'nalishlarida ishlaymiz</em></h2>
+    <div class="section__head reveal" data-num="04">
+      <p class="label" data-i18n="industries.label">04 — Yo'nalishlar</p>
+      <h2 data-i18n-h2="industries">Kimyo sanoatining qaysi<br><em>yo'nalishlarida ishlaymiz</em></h2>
     </div>
     <div class="industries">
-      <div class="ind reveal"><b>Mineral o'g'itlar</b><span>ammiak, karbamid, selitra, ammofos, superfosfat</span></div>
-      <div class="ind reveal"><b>Kislotalar</b><span>oltingugurt, azot, fosfor kislotasi qurilmalari</span></div>
-      <div class="ind reveal"><b>Xlor-ishqor va soda</b><span>ishlab chiqarish qurilmalari</span></div>
-      <div class="ind reveal"><b>Polimerlar</b><span>polietilen, polipropilen, PVX, granula liniyalari</span></div>
-      <div class="ind reveal"><b>Neft-kimyo</b><span>gaz qayta ishlash, metanol, erituvchilar</span></div>
-      <div class="ind reveal"><b>Agrokimyo</b><span>pestitsid, gerbitsid, o'simlik himoya vositalari</span></div>
-      <div class="ind reveal"><b>Texnik kimyo</b><span>lak-bo'yoq, yuvish vositalari, sanoat gazlari</span></div>
-      <div class="ind reveal"><b>Ekologiya</b><span>gaz tozalash, oqava suv tozalash, neytralizatsiya</span></div>
+      <div class="ind reveal"><b data-i18n="industries.items.0.title">Mineral o'g'itlar</b><span data-i18n="industries.items.0.desc">ammiak, karbamid, selitra, ammofos, superfosfat</span></div>
+      <div class="ind reveal"><b data-i18n="industries.items.1.title">Kislotalar</b><span data-i18n="industries.items.1.desc">oltingugurt, azot, fosfor kislotasi qurilmalari</span></div>
+      <div class="ind reveal"><b data-i18n="industries.items.2.title">Xlor-ishqor va soda</b><span data-i18n="industries.items.2.desc">ishlab chiqarish qurilmalari</span></div>
+      <div class="ind reveal"><b data-i18n="industries.items.3.title">Polimerlar</b><span data-i18n="industries.items.3.desc">polietilen, polipropilen, PVX, granula liniyalari</span></div>
+      <div class="ind reveal"><b data-i18n="industries.items.4.title">Neft-kimyo</b><span data-i18n="industries.items.4.desc">gaz qayta ishlash, metanol, erituvchilar</span></div>
+      <div class="ind reveal"><b data-i18n="industries.items.5.title">Agrokimyo</b><span data-i18n="industries.items.5.desc">pestitsid, gerbitsid, o'simlik himoya vositalari</span></div>
+      <div class="ind reveal"><b data-i18n="industries.items.6.title">Texnik kimyo</b><span data-i18n="industries.items.6.desc">lak-bo'yoq, yuvish vositalari, sanoat gazlari</span></div>
+      <div class="ind reveal"><b data-i18n="industries.items.7.title">Ekologiya</b><span data-i18n="industries.items.7.desc">gaz tozalash, oqava suv tozalash, neytralizatsiya</span></div>
     </div>
   </div>
 </section>
@@ -342,17 +361,17 @@
 <!-- ================= WHY US ================= -->
 <section class="section" id="why">
   <div class="container">
-    <div class="section__head reveal">
-      <p class="label">05 — Nima uchun aynan biz</p>
-      <h2>Oltita sabab —<br><em>bitta javobgarlik</em></h2>
+    <div class="section__head reveal" data-num="05">
+      <p class="label" data-i18n="why.label">05 — Nima uchun aynan biz</p>
+      <h2 data-i18n-h2="why">Oltita sabab —<br><em>bitta javobgarlik</em></h2>
     </div>
     <div class="why">
-      <article class="why__card reveal"><b>01</b><h3>Ongli ixtisoslashuv</h3><p>Butun e'tiborimiz kimyo obyektlarida: material tanlash, futerovka, nerjaveyka payvandlash va agressiv muhitdan himoya bo'yicha tayyorgarlik ko'rdik.</p></article>
-      <article class="why__card reveal"><b>02</b><h3>Bitta pudratchi — barcha ishlar</h3><p>Quvur bir firmada, futerovka boshqasida bo'lsa — muddat buziladi. Bizda hammasi bitta shartnoma va bitta javobgarlik ostida.</p></article>
-      <article class="why__card reveal"><b>03</b><h3>Material — muhitga qarab</h3><p>Konsentratsiya, harorat va rejimni so'raymiz, keyin tizimni taklif qilamiz. Kerak bo'lsa arzonroq, lekin ishlaydigan alternativani ko'rsatamiz.</p></article>
-      <article class="why__card reveal"><b>04</b><h3>Ishlayotgan korxonada</h3><p>Ishlab chiqarishni to'xtatmasdan, smenali va tungi rejimda ishlaymiz. To'xtatish remonti uchun brigada va grafikni oldindan rejalashtiramiz.</p></article>
-      <article class="why__card reveal"><b>05</b><h3>Hujjatlashtirilgan sifat</h3><p>Tozalash darajasi, qoplama qalinligi, chok nazorati, gidrosinov — hammasi akt va protokol bilan. Ijro hujjatlarini to'liq topshiramiz.</p></article>
-      <article class="why__card reveal"><b>06</b><h3>Xavfsizlik — birinchi o'rinda</h3><p>Gaz analizatori, iskra chiqmaydigan asbob, maxsus kiyim. Obyektda buyurtmachining rejimi so'zsiz bajariladi.</p></article>
+      <article class="why__card reveal"><b>01</b><h3 data-i18n="why.items.0.title">Ongli ixtisoslashuv</h3><p data-i18n="why.items.0.desc">Butun e'tiborimiz kimyo obyektlarida: material tanlash, futerovka, nerjaveyka payvandlash va agressiv muhitdan himoya bo'yicha tayyorgarlik ko'rdik.</p></article>
+      <article class="why__card reveal"><b>02</b><h3 data-i18n="why.items.1.title">Bitta pudratchi — barcha ishlar</h3><p data-i18n="why.items.1.desc">Quvur bir firmada, futerovka boshqasida bo'lsa — muddat buziladi. Bizda hammasi bitta shartnoma va bitta javobgarlik ostida.</p></article>
+      <article class="why__card reveal"><b>03</b><h3 data-i18n="why.items.2.title">Material — muhitga qarab</h3><p data-i18n="why.items.2.desc">Konsentratsiya, harorat va rejimni so'raymiz, keyin tizimni taklif qilamiz. Kerak bo'lsa arzonroq, lekin ishlaydigan alternativani ko'rsatamiz.</p></article>
+      <article class="why__card reveal"><b>04</b><h3 data-i18n="why.items.3.title">Ishlayotgan korxonada</h3><p data-i18n="why.items.3.desc">Ishlab chiqarishni to'xtatmasdan, smenali va tungi rejimda ishlaymiz. To'xtatish remonti uchun brigada va grafikni oldindan rejalashtiramiz.</p></article>
+      <article class="why__card reveal"><b>05</b><h3 data-i18n="why.items.4.title">Hujjatlashtirilgan sifat</h3><p data-i18n="why.items.4.desc">Tozalash darajasi, qoplama qalinligi, chok nazorati, gidrosinov — hammasi akt va protokol bilan. Ijro hujjatlarini to'liq topshiramiz.</p></article>
+      <article class="why__card reveal"><b>06</b><h3 data-i18n="why.items.5.title">Xavfsizlik — birinchi o'rinda</h3><p data-i18n="why.items.5.desc">Gaz analizatori, iskra chiqmaydigan asbob, maxsus kiyim. Obyektda buyurtmachining rejimi so'zsiz bajariladi.</p></article>
     </div>
   </div>
 </section>
@@ -360,38 +379,38 @@
 <!-- ================= PROJECTS / GALLERY ================= -->
 <section class="section section--alt" id="projects">
   <div class="container">
-    <div class="section__head reveal">
-      <p class="label">06 — Obyektlar</p>
-      <h2>Bajarilgan ishlarimizdan<br><em>lavhalar</em></h2>
-      <p class="section__note">Kimyo obyektlari bo'yicha portfolio shakllantirilmoqda — sizni qiziqtirgan ish turi bo'yicha loyihalarimiz fotosi va hajmlarini so'rov bo'yicha yuboramiz.</p>
+    <div class="section__head reveal" data-num="06">
+      <p class="label" data-i18n="projects.label">06 — Obyektlar</p>
+      <h2 data-i18n-h2="projects">Bajarilgan ishlarimizdan<br><em>lavhalar</em></h2>
+      <p class="section__note" data-i18n="projects.note">Kimyo obyektlari bo'yicha portfolio shakllantirilmoqda — sizni qiziqtirgan ish turi bo'yicha loyihalarimiz fotosi va hajmlarini so'rov bo'yicha yuboramiz.</p>
     </div>
   </div>
   <div class="gallery">
-    <figure class="gallery__item reveal"><img src="assets/img/p-manifold.jpg" alt="Sovuq izolyatsiya — kollektor tugunlari" loading="lazy"><figcaption>Sovuq izolyatsiya — kollektor tugunlari</figcaption></figure>
-    <figure class="gallery__item reveal"><img src="assets/img/p-thermal-tanks.jpg" alt="Issiqlik izolyatsiyasi — texnologik sig'imlar" loading="lazy"><figcaption>Issiqlik izolyatsiyasi — sig'imlar</figcaption></figure>
-    <figure class="gallery__item reveal"><img src="assets/img/p-worker.jpg" alt="Balandlikdagi ishlar — xavfsizlik nazorati" loading="lazy"><figcaption>Balandlikdagi ishlar — xavfsizlik nazorati</figcaption></figure>
-    <figure class="gallery__item reveal"><img src="assets/img/p-pipeline-bend.jpg" alt="Magistral quvur izolyatsiyasi" loading="lazy"><figcaption>Magistral quvur izolyatsiyasi</figcaption></figure>
-    <figure class="gallery__item reveal"><img src="assets/img/p-column.jpg" alt="Kolonna va apparatlar izolyatsiyasi" loading="lazy"><figcaption>Kolonna va apparatlar izolyatsiyasi</figcaption></figure>
-    <figure class="gallery__item reveal"><img src="assets/img/p-tank-horizontal.jpg" alt="Gorizontal rezervuar izolyatsiyasi" loading="lazy"><figcaption>Gorizontal rezervuar izolyatsiyasi</figcaption></figure>
-    <figure class="gallery__item reveal"><img src="assets/img/p-trace-heating.jpg" alt="Elektr isitish tizimlari" loading="lazy"><figcaption>Elektr isitish (obogrev) tizimlari</figcaption></figure>
-    <figure class="gallery__item reveal"><img src="assets/img/p-scaffold-wide.jpg" alt="Sanoat lesa montaji" loading="lazy"><figcaption>Sanoat lesa montaji</figcaption></figure>
-    <figure class="gallery__item reveal"><img src="assets/img/p-vessel.jpg" alt="Texnologik sig'imlar qoplamasi" loading="lazy"><figcaption>Texnologik sig'imlar qoplamasi</figcaption></figure>
-    <figure class="gallery__item reveal"><img src="assets/img/p-tower-crane.jpg" alt="Minora inshootlarida lesa ishlari" loading="lazy"><figcaption>Minora inshootlarida lesa ishlari</figcaption></figure>
+    <figure class="gallery__item reveal"><img src="assets/img/p-manifold.jpg" alt="Sovuq izolyatsiya — kollektor tugunlari" loading="lazy" data-i18n-alt="projects.gallery.0.alt"><figcaption data-i18n="projects.gallery.0.caption">Sovuq izolyatsiya — kollektor tugunlari</figcaption></figure>
+    <figure class="gallery__item reveal"><img src="assets/img/p-thermal-tanks.jpg" alt="Issiqlik izolyatsiyasi — texnologik sig'imlar" loading="lazy" data-i18n-alt="projects.gallery.1.alt"><figcaption data-i18n="projects.gallery.1.caption">Issiqlik izolyatsiyasi — sig'imlar</figcaption></figure>
+    <figure class="gallery__item reveal"><img src="assets/img/p-worker.jpg" alt="Balandlikdagi ishlar — xavfsizlik nazorati" loading="lazy" data-i18n-alt="projects.gallery.2.alt"><figcaption data-i18n="projects.gallery.2.caption">Balandlikdagi ishlar — xavfsizlik nazorati</figcaption></figure>
+    <figure class="gallery__item reveal"><img src="assets/img/p-pipeline-bend.jpg" alt="Magistral quvur izolyatsiyasi" loading="lazy" data-i18n-alt="projects.gallery.3.alt"><figcaption data-i18n="projects.gallery.3.caption">Magistral quvur izolyatsiyasi</figcaption></figure>
+    <figure class="gallery__item reveal"><img src="assets/img/p-column.jpg" alt="Kolonna va apparatlar izolyatsiyasi" loading="lazy" data-i18n-alt="projects.gallery.4.alt"><figcaption data-i18n="projects.gallery.4.caption">Kolonna va apparatlar izolyatsiyasi</figcaption></figure>
+    <figure class="gallery__item reveal"><img src="assets/img/p-tank-horizontal.jpg" alt="Gorizontal rezervuar izolyatsiyasi" loading="lazy" data-i18n-alt="projects.gallery.5.alt"><figcaption data-i18n="projects.gallery.5.caption">Gorizontal rezervuar izolyatsiyasi</figcaption></figure>
+    <figure class="gallery__item reveal"><img src="assets/img/p-trace-heating.jpg" alt="Elektr isitish tizimlari" loading="lazy" data-i18n-alt="projects.gallery.6.alt"><figcaption data-i18n="projects.gallery.6.caption">Elektr isitish (obogrev) tizimlari</figcaption></figure>
+    <figure class="gallery__item reveal"><img src="assets/img/p-scaffold-wide.jpg" alt="Sanoat lesa montaji" loading="lazy" data-i18n-alt="projects.gallery.7.alt"><figcaption data-i18n="projects.gallery.7.caption">Sanoat lesa montaji</figcaption></figure>
+    <figure class="gallery__item reveal"><img src="assets/img/p-vessel.jpg" alt="Texnologik sig'imlar qoplamasi" loading="lazy" data-i18n-alt="projects.gallery.8.alt"><figcaption data-i18n="projects.gallery.8.caption">Texnologik sig'imlar qoplamasi</figcaption></figure>
+    <figure class="gallery__item reveal"><img src="assets/img/p-tower-crane.jpg" alt="Minora inshootlarida lesa ishlari" loading="lazy" data-i18n-alt="projects.gallery.9.alt"><figcaption data-i18n="projects.gallery.9.caption">Minora inshootlarida lesa ishlari</figcaption></figure>
   </div>
 </section>
 
 <!-- ================= PROCESS ================= -->
 <section class="section" id="process">
   <div class="container">
-    <div class="section__head reveal">
-      <p class="label">07 — Ish jarayoni</p>
-      <h2>Murojaatdan topshirishgacha —<br><em>to'rt qadam</em></h2>
+    <div class="section__head reveal" data-num="07">
+      <p class="label" data-i18n="process.label">07 — Ish jarayoni</p>
+      <h2 data-i18n-h2="process">Murojaatdan topshirishgacha —<br><em>to'rt qadam</em></h2>
     </div>
     <div class="process">
-      <div class="proc reveal"><b>01</b><h3>Murojaat va ko'rik</h3><p>1 ish kuni ichida bog'lanamiz. Mutaxassis obyektga chiqib, hajmlarni o'lchaydi va muhitlar bo'yicha ma'lumot to'playdi.</p></div>
-      <div class="proc reveal"><b>02</b><h3>Texnik yechim va smeta</h3><p>Material va qoplama tizimini muhitga moslab tanlaymiz. Hajmlar vedomosti, spetsifikatsiya va grafik — odatda 2–5 ish kuni.</p></div>
-      <div class="proc reveal"><b>03</b><h3>Shartnoma va boshlash</h3><p>Muddat, narx, kafolat va topshirish tartibi aniq yoziladi. Brigada va materiallar obyektga chiqadi.</p></div>
-      <div class="proc reveal"><b>04</b><h3>Nazorat va topshirish</h3><p>Bosqichma-bosqich fotoreport, sinovlar, aktlar va ijro hujjatlari. Kafolat: 12–36 oy.</p></div>
+      <div class="proc reveal"><b>01</b><h3 data-i18n="process.items.0.title">Murojaat va ko'rik</h3><p data-i18n="process.items.0.desc">1 ish kuni ichida bog'lanamiz. Mutaxassis obyektga chiqib, hajmlarni o'lchaydi va muhitlar bo'yicha ma'lumot to'playdi.</p></div>
+      <div class="proc reveal"><b>02</b><h3 data-i18n="process.items.1.title">Texnik yechim va smeta</h3><p data-i18n="process.items.1.desc">Material va qoplama tizimini muhitga moslab tanlaymiz. Hajmlar vedomosti, spetsifikatsiya va grafik — odatda 2–5 ish kuni.</p></div>
+      <div class="proc reveal"><b>03</b><h3 data-i18n="process.items.2.title">Shartnoma va boshlash</h3><p data-i18n="process.items.2.desc">Muddat, narx, kafolat va topshirish tartibi aniq yoziladi. Brigada va materiallar obyektga chiqadi.</p></div>
+      <div class="proc reveal"><b>04</b><h3 data-i18n="process.items.3.title">Nazorat va topshirish</h3><p data-i18n="process.items.3.desc">Bosqichma-bosqich fotoreport, sinovlar, aktlar va ijro hujjatlari. Kafolat: 12–36 oy.</p></div>
     </div>
   </div>
 </section>
@@ -399,31 +418,31 @@
 <!-- ================= SAFETY ================= -->
 <section class="section section--alt" id="safety">
   <div class="container">
-    <div class="section__head reveal">
-      <p class="label">08 — Xavfsizlik va sifat</p>
-      <h2>Sifatsiz chok — potensial chiqish.<br><em>Shuning uchun ikkalasi ham bitta narsa</em></h2>
+    <div class="section__head reveal" data-num="08">
+      <p class="label" data-i18n="safety.label">08 — Xavfsizlik va sifat</p>
+      <h2 data-i18n-h2="safety">Bitta nazorat tizimi —<br><em>ikki natija: xavfsizlik va sifat</em></h2>
     </div>
     <div class="safety">
       <div class="safety__col reveal">
-        <h3>Xavfsizlik</h3>
+        <h3 data-i18n="safety.col1.title">Xavfsizlik</h3>
         <ul>
-          <li>Mehnat muhofazasi va gaz xavfsizligi bo'yicha o'qitilgan xodimlar</li>
-          <li>Balandlik, olovli ish va gaz xavfli ishlar uchun naryad-dopusk</li>
-          <li>Havo muhitini gaz analizatori bilan nazorat qilish</li>
-          <li>Ex-zonalarda iskra chiqmaydigan asbob va uskunalar</li>
-          <li>Kislotaga chidamli kostyum, respirator, straxovka</li>
-          <li>Buyurtmachining LOTO va ruxsatnoma tizimiga to'liq rioya</li>
+          <li data-i18n="safety.col1.items.0">Mehnat muhofazasi va gaz xavfsizligi bo'yicha o'qitilgan xodimlar</li>
+          <li data-i18n="safety.col1.items.1">Balandlik, olovli ish va gaz xavfli ishlar uchun naryad-dopusk</li>
+          <li data-i18n="safety.col1.items.2">Havo muhitini gaz analizatori bilan nazorat qilish</li>
+          <li data-i18n="safety.col1.items.3">Ex-zonalarda iskra chiqmaydigan asbob va uskunalar</li>
+          <li data-i18n="safety.col1.items.4">Kislotaga chidamli kostyum, respirator, straxovka</li>
+          <li data-i18n="safety.col1.items.5">Buyurtmachining LOTO va ruxsatnoma tizimiga to'liq rioya</li>
         </ul>
       </div>
       <div class="safety__col reveal">
-        <h3>Sifat</h3>
+        <h3 data-i18n="safety.col2.title">Sifat</h3>
         <ul>
-          <li>Materiallar muhit bo'yicha tanlanadi, sertifikat bilan qabul qilinadi</li>
-          <li>Nerjaveyka uchun alohida asbob va uchastka</li>
-          <li>Operatsion nazorat: har bir bosqich yopilishidan oldin tekshiriladi</li>
-          <li>Qoplama qalinligi (DFT) har bir qatlamda o'lchanadi</li>
-          <li>Futerovka uchqun defektoskopi bilan tekshiriladi</li>
-          <li>Yakuniy sinov protokollari va ijro hujjatlari topshiriladi</li>
+          <li data-i18n="safety.col2.items.0">Materiallar muhit bo'yicha tanlanadi, sertifikat bilan qabul qilinadi</li>
+          <li data-i18n="safety.col2.items.1">Nerjaveyka uchun alohida asbob va uchastka</li>
+          <li data-i18n="safety.col2.items.2">Operatsion nazorat: har bir bosqich yopilishidan oldin tekshiriladi</li>
+          <li data-i18n="safety.col2.items.3">Qoplama qalinligi (DFT) har bir qatlamda o'lchanadi</li>
+          <li data-i18n="safety.col2.items.4">Futerovka uchqun defektoskopi bilan tekshiriladi</li>
+          <li data-i18n="safety.col2.items.5">Yakuniy sinov protokollari va ijro hujjatlari topshiriladi</li>
         </ul>
       </div>
     </div>
@@ -433,43 +452,43 @@
 <!-- ================= FAQ ================= -->
 <section class="section" id="faq">
   <div class="container container--narrow">
-    <div class="section__head reveal">
-      <p class="label">09 — Savol-javob</p>
-      <h2>Ko'p so'raladigan<br><em>savollar</em></h2>
+    <div class="section__head reveal" data-num="09">
+      <p class="label" data-i18n="faq.label">09 — Savol-javob</p>
+      <h2 data-i18n-h2="faq">Ko'p so'raladigan<br><em>savollar</em></h2>
     </div>
 
     <div class="faq">
       <details class="faq__item reveal">
-        <summary>Kimyo sohasida tajribangiz bormi?<span class="srv__plus" aria-hidden="true"></span></summary>
-        <div class="faq__body"><p>Ochiq javob beramiz: tajribamiz sanoat qurilish-montaj ishlarida to'plangan — metallokonstruksiya, payvandlash, quvur tizimlari, rezervuar montaji, izolyatsiya. Aynan shu ishlar kimyo zavodida ham bajariladi, faqat yuqoriroq talablar bilan. Birinchi kimyo loyihalarida kuchaytirilgan texnik nazorat bilan yoki tor yo'nalish bo'yicha subpudratchi sifatida ishlashga tayyormiz — natija uchun bu eng to'g'ri format.</p></div>
+        <summary><span data-i18n="faq.items.0.q">Kimyo sohasida tajribangiz bormi?</span><span class="srv__plus" aria-hidden="true"></span></summary>
+        <div class="faq__body"><p data-i18n="faq.items.0.a">Ochiq javob beramiz: tajribamiz sanoat qurilish-montaj ishlarida to'plangan — metallokonstruksiya, payvandlash, quvur tizimlari, rezervuar montaji, izolyatsiya. Aynan shu ishlar kimyo zavodida ham bajariladi, faqat yuqoriroq talablar bilan. Birinchi kimyo loyihalarida kuchaytirilgan texnik nazorat bilan yoki tor yo'nalish bo'yicha subpudratchi sifatida ishlashga tayyormiz — natija uchun bu eng to'g'ri format.</p></div>
       </details>
       <details class="faq__item reveal">
-        <summary>Zavodni to'xtatmasdan ishlay olasizmi?<span class="srv__plus" aria-hidden="true"></span></summary>
-        <div class="faq__body"><p>Ha. Ishlayotgan korxonalarda, ishlab chiqarishni to'xtatmasdan, smenali va tungi rejimda ishlash tajribamiz bor. To'xtatish remonti uchun brigada va grafikni oldindan rejalashtiramiz.</p></div>
+        <summary><span data-i18n="faq.items.1.q">Zavodni to'xtatmasdan ishlay olasizmi?</span><span class="srv__plus" aria-hidden="true"></span></summary>
+        <div class="faq__body"><p data-i18n="faq.items.1.a">Ha. Ishlayotgan korxonalarda, ishlab chiqarishni to'xtatmasdan, smenali va tungi rejimda ishlash tajribamiz bor. To'xtatish remonti uchun brigada va grafikni oldindan rejalashtiramiz.</p></div>
       </details>
       <details class="faq__item reveal">
-        <summary>Qanday muhitlar uchun yechim taklif qila olasiz?<span class="srv__plus" aria-hidden="true"></span></summary>
-        <div class="faq__body"><p>Oltingugurt, azot va fosfor kislotasi, ishqor, ammiak, o'g'it eritmalari, organik erituvchilar. Muhit, konsentratsiya va haroratni aytsangiz — mos material, futerovka va qoplama tizimini hisoblab taklif qilamiz.</p></div>
+        <summary><span data-i18n="faq.items.2.q">Qanday muhitlar uchun yechim taklif qila olasiz?</span><span class="srv__plus" aria-hidden="true"></span></summary>
+        <div class="faq__body"><p data-i18n="faq.items.2.a">Oltingugurt, azot va fosfor kislotasi, ishqor, ammiak, o'g'it eritmalari, organik erituvchilar. Muhit, konsentratsiya va haroratni aytsangiz — mos material, futerovka va qoplama tizimini hisoblab taklif qilamiz.</p></div>
       </details>
       <details class="faq__item reveal">
-        <summary>Faqat bitta yo'nalishga buyurtma bersam bo'ladimi?<span class="srv__plus" aria-hidden="true"></span></summary>
-        <div class="faq__body"><p>Albatta. Ko'p mijozlar bitta yo'nalishdan boshlaydi — masalan, faqat futerovka yoki faqat izolyatsiya — keyin qolgan ishlarni ham bizga topshiradi.</p></div>
+        <summary><span data-i18n="faq.items.3.q">Faqat bitta yo'nalishga buyurtma bersam bo'ladimi?</span><span class="srv__plus" aria-hidden="true"></span></summary>
+        <div class="faq__body"><p data-i18n="faq.items.3.a">Albatta. Ko'p mijozlar bitta yo'nalishdan boshlaydi — masalan, faqat futerovka yoki faqat izolyatsiya — keyin qolgan ishlarni ham bizga topshiradi.</p></div>
       </details>
       <details class="faq__item reveal">
-        <summary>Portlash xavfli zonada ishlaysizmi?<span class="srv__plus" aria-hidden="true"></span></summary>
-        <div class="faq__body"><p>Ha, faqat naryad-dopusk tizimi bo'yicha: gaz analizatori bilan nazorat, iskra chiqmaydigan asbob, olovli ishlar uchun alohida ruxsat va yong'in posti.</p></div>
+        <summary><span data-i18n="faq.items.4.q">Portlash xavfli zonada ishlaysizmi?</span><span class="srv__plus" aria-hidden="true"></span></summary>
+        <div class="faq__body"><p data-i18n="faq.items.4.a">Ha, faqat naryad-dopusk tizimi bo'yicha: gaz analizatori bilan nazorat, iskra chiqmaydigan asbob, olovli ishlar uchun alohida ruxsat va yong'in posti.</p></div>
       </details>
       <details class="faq__item reveal">
-        <summary>Material sizdanmi yoki buyurtmachidanmi?<span class="srv__plus" aria-hidden="true"></span></summary>
-        <div class="faq__body"><p>Ikkala variant ham ishlaydi. Materialni o'zimiz yetkazib berganda odatda narx pastroq bo'ladi va javobgarlik bir joyda to'planadi.</p></div>
+        <summary><span data-i18n="faq.items.5.q">Material sizdanmi yoki buyurtmachidanmi?</span><span class="srv__plus" aria-hidden="true"></span></summary>
+        <div class="faq__body"><p data-i18n="faq.items.5.a">Ikkala variant ham ishlaydi. Materialni o'zimiz yetkazib berganda odatda narx pastroq bo'ladi va javobgarlik bir joyda to'planadi.</p></div>
       </details>
       <details class="faq__item reveal">
-        <summary>Viloyatlarga chiqasizmi?<span class="srv__plus" aria-hidden="true"></span></summary>
-        <div class="faq__body"><p>Ha, O'zbekistonning barcha hududlarida ishlaymiz. Jamoa vaxta usulida chiqadi, texnika obyektga yetkaziladi.</p></div>
+        <summary><span data-i18n="faq.items.6.q">Viloyatlarga chiqasizmi?</span><span class="srv__plus" aria-hidden="true"></span></summary>
+        <div class="faq__body"><p data-i18n="faq.items.6.a">Ha, O'zbekistonning barcha hududlarida ishlaymiz. Jamoa vaxta usulida chiqadi, texnika obyektga yetkaziladi.</p></div>
       </details>
       <details class="faq__item reveal">
-        <summary>Kafolat va hujjatlar bo'yicha nima beriladi?<span class="srv__plus" aria-hidden="true"></span></summary>
-        <div class="faq__body"><p>Ish turiga qarab 12–36 oy kafolat. Hujjatlar: aktlar, sinov protokollari, qoplama qalinligi o'lchovlari, ijro sxemalari, material sertifikatlari.</p></div>
+        <summary><span data-i18n="faq.items.7.q">Kafolat va hujjatlar bo'yicha nima beriladi?</span><span class="srv__plus" aria-hidden="true"></span></summary>
+        <div class="faq__body"><p data-i18n="faq.items.7.a">Ish turiga qarab 12–36 oy kafolat. Hujjatlar: aktlar, sinov protokollari, qoplama qalinligi o'lchovlari, ijro sxemalari, material sertifikatlari.</p></div>
       </details>
     </div>
   </div>
@@ -479,85 +498,91 @@
 <section class="section section--cta" id="contact">
   <div class="container cta">
     <div class="cta__text reveal">
-      <p class="label">10 — Aloqa</p>
-      <h2>Loyihangizni<br><em>muhokama qilaylik</em></h2>
-      <p class="cta__lead">Chizmani yoki obyekt tavsifini yuboring — muhit va sharoitni hisobga olgan holda <b>2 ish kuni ichida</b> taklif tayyorlaymiz. Ko'rik bepul.</p>
+      <p class="label" data-i18n="cta.label">10 — Aloqa</p>
+      <h2 data-i18n-h2="cta">Loyihangizni<br><em>muhokama qilaylik</em></h2>
+      <p class="cta__lead" data-i18n-html="cta.lead">Chizmani yoki obyekt tavsifini yuboring — muhit va sharoitni hisobga olgan holda <b>2 ish kuni ichida</b> taklif tayyorlaymiz. Ko'rik bepul.</p>
 
       <div class="cta__contacts">
-        <a class="cta__row" href="tel:+998907329999"><span class="cta__ico" aria-hidden="true">☎</span><span><i>Telefon</i><b>+998 90 732-99-99</b></span></a>
-        <a class="cta__row" href="https://t.me/+998907329999" target="_blank" rel="noopener"><span class="cta__ico" aria-hidden="true">✈</span><span><i>Telegram</i><b>Yozish uchun bosing</b></span></a>
-        <a class="cta__row" href="mailto:constructionstonegroup@inbox.ru"><span class="cta__ico" aria-hidden="true">✉</span><span><i>E-mail</i><b>constructionstonegroup@inbox.ru</b></span></a>
-        <div class="cta__row"><span class="cta__ico" aria-hidden="true">◎</span><span><i>Manzil</i><b>Samarqand viloyati, Paxtachi tumani, Burkut</b></span></div>
-        <div class="cta__row"><span class="cta__ico" aria-hidden="true">◷</span><span><i>Ish vaqti</i><b>Du–Sha 9:00–18:00 · obyektlarda 24/7</b></span></div>
+        <a class="cta__row" href="tel:+998907329999"><span class="cta__ico" aria-hidden="true">☎</span><span><i data-i18n="cta.phoneLabel">Telefon</i><b>+998 90 732-99-99</b></span></a>
+        <a class="cta__row" href="https://t.me/+998907329999" target="_blank" rel="noopener"><span class="cta__ico" aria-hidden="true">✈</span><span><i data-i18n="cta.telegramLabel">Telegram</i><b data-i18n="cta.telegramValue">Yozish uchun bosing</b></span></a>
+        <a class="cta__row" href="mailto:constructionstonegroup@inbox.ru"><span class="cta__ico" aria-hidden="true">✉</span><span><i data-i18n="cta.emailLabel">E-mail</i><b>constructionstonegroup@inbox.ru</b></span></a>
+        <div class="cta__row"><span class="cta__ico" aria-hidden="true">◎</span><span><i data-i18n="cta.addressLabel">Manzil</i><b data-i18n="cta.addressValue">Samarqand viloyati, Paxtachi tumani, Burkut</b></span></div>
+        <div class="cta__row"><span class="cta__ico" aria-hidden="true">◷</span><span><i data-i18n="cta.hoursLabel">Ish vaqti</i><b data-i18n="cta.hoursValue">Du–Sha 9:00–18:00 · obyektlarda 24/7</b></span></div>
       </div>
     </div>
 
     <form class="form reveal" id="leadForm" novalidate>
       <div class="form__row">
-        <label class="field"><span>Ismingiz</span><input type="text" name="name" placeholder="Ismingiz" autocomplete="name"></label>
-        <label class="field"><span>Telefon *</span><input type="tel" name="phone" placeholder="+998 __ ___-__-__" required autocomplete="tel"></label>
+        <label class="field"><span data-i18n="cta.form.nameLabel">Ismingiz</span><input type="text" name="name" placeholder="Ismingiz" autocomplete="name" data-i18n-placeholder="cta.form.namePh"></label>
+        <label class="field"><span data-i18n="cta.form.phoneLabel">Telefon *</span><input type="tel" name="phone" placeholder="+998 __ ___-__-__" required autocomplete="tel"></label>
       </div>
       <div class="form__row">
-        <label class="field"><span>Kompaniya</span><input type="text" name="company" placeholder="Kompaniya nomi" autocomplete="organization"></label>
-        <label class="field"><span>Xizmat</span>
+        <label class="field"><span data-i18n="cta.form.companyLabel">Kompaniya</span><input type="text" name="company" placeholder="Kompaniya nomi" autocomplete="organization" data-i18n-placeholder="cta.form.companyPh"></label>
+        <label class="field"><span data-i18n="cta.form.serviceLabel">Xizmat</span>
           <select name="service">
-            <option value="" selected>Tanlang…</option>
-            <option>Quvur o'tkazgichlar montaji</option>
-            <option>Uskunalar montaji</option>
-            <option>Rezervuarlar montaji</option>
-            <option>Metallokonstruksiyalar</option>
-            <option>Argon payvandlash</option>
-            <option>Elektr payvandlash</option>
-            <option>Peskostruy</option>
-            <option>Kimyoviy chidamli qoplamalar</option>
-            <option>Sanoat izolyatsiyasi</option>
-            <option>Lesa montaji</option>
-            <option>Futerovka (plitka/g'isht)</option>
-            <option>Boshqa</option>
+            <option value="" selected data-i18n="cta.form.servicePlaceholder">Tanlang…</option>
+            <option data-i18n="cta.form.serviceOptions.0">Quvur o'tkazgichlar montaji</option>
+            <option data-i18n="cta.form.serviceOptions.1">Uskunalar montaji</option>
+            <option data-i18n="cta.form.serviceOptions.2">Rezervuarlar montaji</option>
+            <option data-i18n="cta.form.serviceOptions.3">Metallokonstruksiyalar</option>
+            <option data-i18n="cta.form.serviceOptions.4">Argon payvandlash</option>
+            <option data-i18n="cta.form.serviceOptions.5">Elektr payvandlash</option>
+            <option data-i18n="cta.form.serviceOptions.6">Peskostruy</option>
+            <option data-i18n="cta.form.serviceOptions.7">Kimyoviy chidamli qoplamalar</option>
+            <option data-i18n="cta.form.serviceOptions.8">Sanoat izolyatsiyasi</option>
+            <option data-i18n="cta.form.serviceOptions.9">Lesa montaji</option>
+            <option data-i18n="cta.form.serviceOptions.10">Futerovka (plitka/g'isht)</option>
+            <option data-i18n="cta.form.serviceOptions.11">Boshqa</option>
           </select>
         </label>
       </div>
-      <label class="field"><span>Muhit va sharoit</span><input type="text" name="env" placeholder="Masalan: 96% H₂SO₄, 60°C"></label>
-      <label class="field"><span>Obyekt haqida qisqacha</span><textarea name="msg" rows="3" placeholder="Obyekt, hajm, muddat…"></textarea></label>
-      <button class="btn btn--primary btn--block" type="submit">Arizani yuborish</button>
-      <p class="form__note">Ma'lumotlaringiz uchinchi shaxslarga berilmaydi.</p>
-      <p class="form__ok" id="formOk" role="status" hidden>Rahmat! Arizangiz qabul qilindi. Menejerimiz tez orada bog'lanadi.</p>
+      <label class="field"><span data-i18n="cta.form.envLabel">Muhit va sharoit</span><input type="text" name="env" placeholder="Masalan: 96% H₂SO₄, 60°C" data-i18n-placeholder="cta.form.envPh"></label>
+      <label class="field"><span data-i18n="cta.form.msgLabel">Obyekt haqida qisqacha</span><textarea name="msg" rows="3" placeholder="Obyekt, hajm, muddat…" data-i18n-placeholder="cta.form.msgPh"></textarea></label>
+      <button class="btn btn--primary btn--block" type="submit" data-i18n="cta.form.submit">Arizani yuborish</button>
+      <p class="form__note" data-i18n="cta.form.note">Ma'lumotlaringiz uchinchi shaxslarga berilmaydi.</p>
+      <p class="form__ok" id="formOk" role="status" hidden data-i18n="cta.form.ok">Rahmat! Arizangiz qabul qilindi. Menejerimiz tez orada bog'lanadi.</p>
     </form>
   </div>
 </section>
 
 </main>
 
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox__close" id="lightboxClose" aria-label="Yopish" data-i18n-aria-label="aria.lightboxClose">✕</button>
+  <figure><img id="lightboxImg" src="" alt=""><figcaption id="lightboxCap"></figcaption></figure>
+</div>
+
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
+  <div class="footer__giant" aria-hidden="true"><span>Pakhtachi Stone Group</span></div>
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <a href="#top" class="brand"><span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="6" fill="#0E2050"/><path d="M0 8h40v3H0z" fill="url(#g2)" opacity=".9"/><path d="M0 14h40v2H0z" fill="url(#g2)" opacity=".55"/><path d="M0 19h40v1.4H0z" fill="url(#g2)" opacity=".3"/><text x="20" y="34" text-anchor="middle" font-family="'Big Shoulders Display',sans-serif" font-weight="800" font-size="15" fill="#EAF2FC" letter-spacing="1">PSG</text><defs><linearGradient id="g2" x1="0" y1="0" x2="40" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#41D9FF" stop-opacity="0"/><stop offset=".5" stop-color="#41D9FF"/><stop offset="1" stop-color="#9FF0FF"/></linearGradient></defs></svg></span><span class="brand__text"><b>Pakhtachi Stone Group</b><i>Sanoat qurilishi &amp; montaj</i></span></a>
-        <p>Kimyo sanoati obyektlarini qurish va montaj qilish bo'yicha to'liq tsiklli pudratchi. O'zbekiston bo'ylab ishlaymiz.</p>
+        <a href="#top" class="brand"><span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="6" fill="#0E2050"/><path d="M0 8h40v3H0z" fill="url(#g2)" opacity=".9"/><path d="M0 14h40v2H0z" fill="url(#g2)" opacity=".55"/><path d="M0 19h40v1.4H0z" fill="url(#g2)" opacity=".3"/><text x="20" y="34" text-anchor="middle" font-family="'Big Shoulders Display',sans-serif" font-weight="800" font-size="15" fill="#EAF2FC" letter-spacing="1">PSG</text><defs><linearGradient id="g2" x1="0" y1="0" x2="40" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#41D9FF" stop-opacity="0"/><stop offset=".5" stop-color="#41D9FF"/><stop offset="1" stop-color="#9FF0FF"/></linearGradient></defs></svg></span><span class="brand__text"><b>Pakhtachi Stone Group</b><i data-i18n="footer.tagline">Sanoat qurilishi &amp; montaj</i></span></a>
+        <p data-i18n="footer.about">Kimyo sanoati obyektlarini qurish va montaj qilish bo'yicha to'liq tsiklli pudratchi. O'zbekiston bo'ylab ishlaymiz.</p>
       </div>
       <div class="footer__col">
-        <h4>Xizmatlar</h4>
+        <h4 data-i18n="footer.servicesTitle">Xizmatlar</h4>
         <ul>
-          <li><a href="#services">Quvur tizimlari</a></li>
-          <li><a href="#services">Uskuna va rezervuar montaji</a></li>
-          <li><a href="#services">Metallokonstruksiyalar</a></li>
-          <li><a href="#services">Argon va elektr payvandlash</a></li>
-          <li><a href="#services">Qoplamalar va futerovka</a></li>
-          <li><a href="#services">Izolyatsiya va lesa</a></li>
+          <li><a href="#services" data-i18n="footer.servicesLinks.0">Quvur tizimlari</a></li>
+          <li><a href="#services" data-i18n="footer.servicesLinks.1">Uskuna va rezervuar montaji</a></li>
+          <li><a href="#services" data-i18n="footer.servicesLinks.2">Metallokonstruksiyalar</a></li>
+          <li><a href="#services" data-i18n="footer.servicesLinks.3">Argon va elektr payvandlash</a></li>
+          <li><a href="#services" data-i18n="footer.servicesLinks.4">Qoplamalar va futerovka</a></li>
+          <li><a href="#services" data-i18n="footer.servicesLinks.5">Izolyatsiya va lesa</a></li>
         </ul>
       </div>
       <div class="footer__col">
-        <h4>Kompaniya</h4>
+        <h4 data-i18n="footer.companyTitle">Kompaniya</h4>
         <ul>
-          <li><a href="#about">Biz haqimizda</a></li>
-          <li><a href="#projects">Obyektlar</a></li>
-          <li><a href="#faq">Savol-javob</a></li>
-          <li><a href="#contact">Aloqa</a></li>
+          <li><a href="#about" data-i18n="footer.companyLinks.0">Biz haqimizda</a></li>
+          <li><a href="#projects" data-i18n="footer.companyLinks.1">Obyektlar</a></li>
+          <li><a href="#faq" data-i18n="footer.companyLinks.2">Savol-javob</a></li>
+          <li><a href="#contact" data-i18n="footer.companyLinks.3">Aloqa</a></li>
         </ul>
       </div>
       <div class="footer__col footer__col--req">
-        <h4>Rekvizitlar</h4>
+        <h4 data-i18n="footer.reqTitle">Rekvizitlar</h4>
         <ul class="footer__req">
           <li>«PAKHTACHI STONE GROUP» MChJ</li>
           <li>STIR (INN): 307432343</li>
@@ -569,7 +594,7 @@
       </div>
     </div>
     <div class="footer__bottom">
-      <p>© <span id="year">2026</span> Pakhtachi Stone Group. Barcha huquqlar himoyalangan.</p>
+      <p>© <span id="year">2026</span> Pakhtachi Stone Group. <span data-i18n="footer.rights">Barcha huquqlar himoyalangan.</span></p>
       <a href="tel:+998907329999">+998 90 732-99-99</a>
     </div>
   </div>

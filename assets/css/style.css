@@ -795,7 +795,10 @@ a.cta__row:hover { border-color: rgba(65, 217, 255, .55); transform: translateX(
     justify-content: center;
   }
   .nav__extra .btn::after { display: none; }
-  .nav__langs { padding-top: 18px; }
+  .nav__langs { padding-top: 18px; gap: 10px; }
+  .nav__langs button {
+    padding: 11px 16px; font-size: .85rem; min-height: 44px;
+  }
   .header__cta .btn { display: none; }
   .header__phone { display: inline; }
 

@@ -136,7 +136,7 @@
       const key = el.getAttribute('data-i18n-h2');
       const section = pathGet(dict, key);
       if (section && typeof section.h2a === 'string') {
-        el.innerHTML = section.h2a + '<br><em>' + section.h2b + '</em>';
+        el.innerHTML = section.h2a + ' <br><em>' + section.h2b + '</em>';
       }
     });
     const line2 = document.getElementById('heroLine2');

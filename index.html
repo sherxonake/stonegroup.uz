@@ -141,7 +141,8 @@
 </section>
 
 <!-- ================= SERVICES ================= -->
-<section class="section section--alt" id="services">
+<section class="section section--alt section--photo" id="services">
+  <div class="section__photo" aria-hidden="true" style="background-image:url(assets/img/p-ins-vertical-app.jpg);background-position:center 30%"></div>
   <div class="container">
     <div class="section__head reveal" data-num="02">
       <p class="label" data-i18n="services.label">02 — Xizmatlar</p>
@@ -319,7 +320,8 @@
   </div></section>
 
 <!-- ================= STAGES ================= -->
-<section class="section" id="stages">
+<section class="section section--photo" id="stages">
+  <div class="section__photo" aria-hidden="true" style="background-image:url(assets/img/p-ins-column-full.jpg);background-position:center 22%"></div>
   <div class="container">
     <div class="section__head reveal" data-num="03">
       <p class="label" data-i18n="stages.label">03 — Qurilish bosqichlari</p>
@@ -339,7 +341,8 @@
 </section>
 
 <!-- ================= INDUSTRIES ================= -->
-<section class="section section--alt" id="industries">
+<section class="section section--alt section--photo" id="industries">
+  <div class="section__photo" aria-hidden="true" style="background-image:url(assets/img/p-ins-columns-row.jpg);background-position:center 40%"></div>
   <div class="container">
     <div class="section__head reveal" data-num="04">
       <p class="label" data-i18n="industries.label">04 — Yo'nalishlar</p>
@@ -385,17 +388,57 @@
       <p class="section__note" data-i18n="projects.note">Kimyo obyektlari bo'yicha portfolio shakllantirilmoqda — sizni qiziqtirgan ish turi bo'yicha loyihalarimiz fotosi va hajmlarini so'rov bo'yicha yuboramiz.</p>
     </div>
   </div>
-  <div class="gallery">
-    <figure class="gallery__item reveal"><img src="assets/img/p-manifold.jpg" alt="Sovuq izolyatsiya — kollektor tugunlari" loading="lazy" data-i18n-alt="projects.gallery.0.alt"><figcaption data-i18n="projects.gallery.0.caption">Sovuq izolyatsiya — kollektor tugunlari</figcaption></figure>
-    <figure class="gallery__item reveal"><img src="assets/img/p-thermal-tanks.jpg" alt="Issiqlik izolyatsiyasi — texnologik sig'imlar" loading="lazy" data-i18n-alt="projects.gallery.1.alt"><figcaption data-i18n="projects.gallery.1.caption">Issiqlik izolyatsiyasi — sig'imlar</figcaption></figure>
-    <figure class="gallery__item reveal"><img src="assets/img/p-worker.jpg" alt="Balandlikdagi ishlar — xavfsizlik nazorati" loading="lazy" data-i18n-alt="projects.gallery.2.alt"><figcaption data-i18n="projects.gallery.2.caption">Balandlikdagi ishlar — xavfsizlik nazorati</figcaption></figure>
-    <figure class="gallery__item reveal"><img src="assets/img/p-pipeline-bend.jpg" alt="Magistral quvur izolyatsiyasi" loading="lazy" data-i18n-alt="projects.gallery.3.alt"><figcaption data-i18n="projects.gallery.3.caption">Magistral quvur izolyatsiyasi</figcaption></figure>
-    <figure class="gallery__item reveal"><img src="assets/img/p-column.jpg" alt="Kolonna va apparatlar izolyatsiyasi" loading="lazy" data-i18n-alt="projects.gallery.4.alt"><figcaption data-i18n="projects.gallery.4.caption">Kolonna va apparatlar izolyatsiyasi</figcaption></figure>
-    <figure class="gallery__item reveal"><img src="assets/img/p-tank-horizontal.jpg" alt="Gorizontal rezervuar izolyatsiyasi" loading="lazy" data-i18n-alt="projects.gallery.5.alt"><figcaption data-i18n="projects.gallery.5.caption">Gorizontal rezervuar izolyatsiyasi</figcaption></figure>
-    <figure class="gallery__item reveal"><img src="assets/img/p-trace-heating.jpg" alt="Elektr isitish tizimlari" loading="lazy" data-i18n-alt="projects.gallery.6.alt"><figcaption data-i18n="projects.gallery.6.caption">Elektr isitish (obogrev) tizimlari</figcaption></figure>
-    <figure class="gallery__item reveal"><img src="assets/img/p-scaffold-wide.jpg" alt="Sanoat lesa montaji" loading="lazy" data-i18n-alt="projects.gallery.7.alt"><figcaption data-i18n="projects.gallery.7.caption">Sanoat lesa montaji</figcaption></figure>
-    <figure class="gallery__item reveal"><img src="assets/img/p-vessel.jpg" alt="Texnologik sig'imlar qoplamasi" loading="lazy" data-i18n-alt="projects.gallery.8.alt"><figcaption data-i18n="projects.gallery.8.caption">Texnologik sig'imlar qoplamasi</figcaption></figure>
-    <figure class="gallery__item reveal"><img src="assets/img/p-tower-crane.jpg" alt="Minora inshootlarida lesa ishlari" loading="lazy" data-i18n-alt="projects.gallery.9.alt"><figcaption data-i18n="projects.gallery.9.caption">Minora inshootlarida lesa ishlari</figcaption></figure>
+  <div class="container">
+    <div class="gal-filter reveal" id="galFilter">
+      <button class="gal-chip is-active" type="button" data-filter="all" aria-pressed="true"><span data-i18n="projects.filters.all">Hammasi</span><i>40</i></button>
+      <button class="gal-chip" type="button" data-filter="ins" aria-pressed="false"><span data-i18n="projects.filters.ins">Izolyatsiya va qoplama</span><i>23</i></button>
+      <button class="gal-chip" type="button" data-filter="mat" aria-pressed="false"><span data-i18n="projects.filters.mat">Matras izolyatsiya</span><i>2</i></button>
+      <button class="gal-chip" type="button" data-filter="weld" aria-pressed="false"><span data-i18n="projects.filters.weld">Payvandlash va nazorat</span><i>4</i></button>
+      <button class="gal-chip" type="button" data-filter="shop" aria-pressed="false"><span data-i18n="projects.filters.shop">Sexda tayyorlash</span><i>7</i></button>
+      <button class="gal-chip" type="button" data-filter="lesa" aria-pressed="false"><span data-i18n="projects.filters.lesa">Lesa va balandlik</span><i>4</i></button>
+    </div>
+  </div>
+  <div class="gallery" id="gallery">
+    <figure class="gallery__item reveal" data-cat="ins"><img src="assets/img/p-ins-columns-row.jpg" alt="" width="810" height="1080" loading="lazy" data-i18n-alt="projects.gallery.25.alt"><figcaption data-i18n="projects.gallery.25.caption">Kolonnalar qatori — metall qoplama</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="ins"><img src="assets/img/p-ins-column-full.jpg" alt="" width="900" height="1200" loading="lazy" data-i18n-alt="projects.gallery.21.alt"><figcaption data-i18n="projects.gallery.21.caption">Kolonna izolyatsiyasi — to'liq balandlik</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="ins"><img src="assets/img/p-ins-pumps-line.jpg" alt="" width="1200" height="900" loading="lazy" data-i18n-alt="projects.gallery.10.alt"><figcaption data-i18n="projects.gallery.10.caption">Nasos guruhi va quvurlar izolyatsiyasi</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="ins"><img src="assets/img/p-ins-vertical-app.jpg" alt="" width="900" height="1200" loading="lazy" data-i18n-alt="projects.gallery.18.alt"><figcaption data-i18n="projects.gallery.18.caption">Vertikal apparatlar va quvur tugunlari</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="ins"><img src="assets/img/p-manifold.jpg" alt="" width="1200" height="900" loading="lazy" data-i18n-alt="projects.gallery.0.alt"><figcaption data-i18n="projects.gallery.0.caption"></figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="ins"><img src="assets/img/p-ins-plant-overview.jpg" alt="" width="900" height="1200" loading="lazy" data-i18n-alt="projects.gallery.23.alt"><figcaption data-i18n="projects.gallery.23.caption">Qurilma va estakada — umumiy plan</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="weld"><img src="assets/img/p-weld-in-vessel.jpg" alt="" width="674" height="1200" loading="lazy" data-i18n-alt="projects.gallery.31.alt"><figcaption data-i18n="projects.gallery.31.caption">Apparat ichida payvandlash ishlari</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="ins"><img src="assets/img/p-thermal-tanks.jpg" alt="" width="1200" height="900" loading="lazy" data-i18n-alt="projects.gallery.1.alt"><figcaption data-i18n="projects.gallery.1.caption"></figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="ins"><img src="assets/img/p-ins-unit-sky.jpg" alt="" width="1200" height="900" loading="lazy" data-i18n-alt="projects.gallery.15.alt"><figcaption data-i18n="projects.gallery.15.caption">Qurilma umumiy ko'rinishi — issiqlik izolyatsiyasi</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="shop"><img src="assets/img/p-shop-tee.jpg" alt="" width="960" height="1152" loading="lazy" data-i18n-alt="projects.gallery.32.alt"><figcaption data-i18n="projects.gallery.32.caption">Nerjaveyka troynik — argon payvandlash</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="lesa"><img src="assets/img/p-lesa-lift-work.jpg" alt="" width="900" height="1200" loading="lazy" data-i18n-alt="projects.gallery.39.alt"><figcaption data-i18n="projects.gallery.39.caption">Balandlikda ishlash — ko'targich bilan izolyatsiya</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="ins"><img src="assets/img/p-pipeline-bend.jpg" alt="" width="1200" height="900" loading="lazy" data-i18n-alt="projects.gallery.3.alt"><figcaption data-i18n="projects.gallery.3.caption"></figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="ins"><img src="assets/img/p-ins-app-group.jpg" alt="" width="1200" height="900" loading="lazy" data-i18n-alt="projects.gallery.20.alt"><figcaption data-i18n="projects.gallery.20.caption">Apparatlar guruhi — qoplama qatlami</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="mat"><img src="assets/img/p-mat-valves.jpg" alt="" width="950" height="950" loading="lazy" data-i18n-alt="projects.gallery.27.alt"><figcaption data-i18n="projects.gallery.27.caption">Armatura va flanslar uchun matras izolyatsiya</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="ins"><img src="assets/img/p-column.jpg" alt="" width="900" height="1200" loading="lazy" data-i18n-alt="projects.gallery.4.alt"><figcaption data-i18n="projects.gallery.4.caption"></figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="ins"><img src="assets/img/p-ins-large-bend.jpg" alt="" width="900" height="1200" loading="lazy" data-i18n-alt="projects.gallery.17.alt"><figcaption data-i18n="projects.gallery.17.caption">Yirik diametrli quvur burilishi</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="shop"><img src="assets/img/p-shop-manifold-ss.jpg" alt="" width="1200" height="810" loading="lazy" data-i18n-alt="projects.gallery.36.alt"><figcaption data-i18n="projects.gallery.36.caption">Nerjaveykadan kollektor obvyazkasi</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="ins"><img src="assets/img/p-tank-horizontal.jpg" alt="" width="1200" height="900" loading="lazy" data-i18n-alt="projects.gallery.5.alt"><figcaption data-i18n="projects.gallery.5.caption"></figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="ins"><img src="assets/img/p-ins-pumps-compens.jpg" alt="" width="900" height="1200" loading="lazy" data-i18n-alt="projects.gallery.13.alt"><figcaption data-i18n="projects.gallery.13.caption">Nasoslar va kompensatorlar uchastkasi</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="weld"><img src="assets/img/p-weld-seam-hand.jpg" alt="" width="591" height="1152" loading="lazy" data-i18n-alt="projects.gallery.28.alt"><figcaption data-i18n="projects.gallery.28.caption">Payvand chokini vizual nazorat qilish</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="lesa"><img src="assets/img/p-worker.jpg" alt="" width="964" height="1113" loading="lazy" data-i18n-alt="projects.gallery.2.alt"><figcaption data-i18n="projects.gallery.2.caption"></figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="ins"><img src="assets/img/p-ins-heat-exch.jpg" alt="" width="900" height="1200" loading="lazy" data-i18n-alt="projects.gallery.19.alt"><figcaption data-i18n="projects.gallery.19.caption">Issiqlik almashtirgichlar izolyatsiyasi</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="shop"><img src="assets/img/p-shop-spool.jpg" alt="" width="960" height="1152" loading="lazy" data-i18n-alt="projects.gallery.33.alt"><figcaption data-i18n="projects.gallery.33.caption">Quvur spuli sexda yig'ilmoqda</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="ins"><img src="assets/img/p-trace-heating.jpg" alt="" width="1200" height="801" loading="lazy" data-i18n-alt="projects.gallery.6.alt"><figcaption data-i18n="projects.gallery.6.caption"></figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="ins"><img src="assets/img/p-ins-valve-nodes.jpg" alt="" width="900" height="1200" loading="lazy" data-i18n-alt="projects.gallery.24.alt"><figcaption data-i18n="projects.gallery.24.caption">Zapor armatura tugunlari izolyatsiyasi</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="weld"><img src="assets/img/p-weld-seam-macro.jpg" alt="" width="1200" height="498" loading="lazy" data-i18n-alt="projects.gallery.30.alt"><figcaption data-i18n="projects.gallery.30.caption">Payvand choki — yaqindan ko'rinish</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="lesa"><img src="assets/img/p-scaffold-wide.jpg" alt="" width="1200" height="783" loading="lazy" data-i18n-alt="projects.gallery.7.alt"><figcaption data-i18n="projects.gallery.7.caption"></figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="ins"><img src="assets/img/p-ins-elbow-valve.jpg" alt="" width="900" height="1200" loading="lazy" data-i18n-alt="projects.gallery.11.alt"><figcaption data-i18n="projects.gallery.11.caption">Quvur burilishi va armatura — metall qoplama</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="shop"><img src="assets/img/p-shop-assembly.jpg" alt="" width="1200" height="675" loading="lazy" data-i18n-alt="projects.gallery.37.alt"><figcaption data-i18n="projects.gallery.37.caption">Sexda apparat va quvur obvyazkasi montaji</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="ins"><img src="assets/img/p-vessel.jpg" alt="" width="900" height="1200" loading="lazy" data-i18n-alt="projects.gallery.8.alt"><figcaption data-i18n="projects.gallery.8.caption"></figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="ins"><img src="assets/img/p-ins-indoor-pipes.jpg" alt="" width="1200" height="900" loading="lazy" data-i18n-alt="projects.gallery.22.alt"><figcaption data-i18n="projects.gallery.22.caption">Sex ichidagi quvur tizimlari izolyatsiyasi</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="shop"><img src="assets/img/p-shop-vessel-bottom.jpg" alt="" width="960" height="1152" loading="lazy" data-i18n-alt="projects.gallery.34.alt"><figcaption data-i18n="projects.gallery.34.caption">Apparat tubi — halqa choki</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="lesa"><img src="assets/img/p-tower-crane.jpg" alt="" width="900" height="1200" loading="lazy" data-i18n-alt="projects.gallery.9.alt"><figcaption data-i18n="projects.gallery.9.caption"></figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="ins"><img src="assets/img/p-ins-rack-steel.jpg" alt="" width="900" height="1200" loading="lazy" data-i18n-alt="projects.gallery.14.alt"><figcaption data-i18n="projects.gallery.14.caption">Estakada metallokonstruksiyalari va quvurlar</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="shop"><img src="assets/img/p-shop-welder.jpg" alt="" width="552" height="1200" loading="lazy" data-i18n-alt="projects.gallery.38.alt"><figcaption data-i18n="projects.gallery.38.caption">Sex payvandchisi ish o'rnida</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="ins"><img src="assets/img/p-ins-ducts-boxes.jpg" alt="" width="1200" height="900" loading="lazy" data-i18n-alt="projects.gallery.12.alt"><figcaption data-i18n="projects.gallery.12.caption">Havo kanallari va armatura qutilari</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="ins"><img src="assets/img/p-ins-horiz-vessel.jpg" alt="" width="900" height="1200" loading="lazy" data-i18n-alt="projects.gallery.16.alt"><figcaption data-i18n="projects.gallery.16.caption">Gorizontal apparat izolyatsiyasi va montaji</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="shop"><img src="assets/img/p-shop-flanged-bend.jpg" alt="" width="960" height="1152" loading="lazy" data-i18n-alt="projects.gallery.35.alt"><figcaption data-i18n="projects.gallery.35.caption">Flansli burilish tugunini tayyorlash</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="mat"><img src="assets/img/p-mat-turbine.jpg" alt="" width="500" height="375" loading="lazy" data-i18n-alt="projects.gallery.26.alt"><figcaption data-i18n="projects.gallery.26.caption">Turbina uchun yechiladigan matras izolyatsiya</figcaption></figure>
+    <figure class="gallery__item reveal" data-cat="weld"><img src="assets/img/p-weld-seam-tank.jpg" alt="" width="1200" height="498" loading="lazy" data-i18n-alt="projects.gallery.29.alt"><figcaption data-i18n="projects.gallery.29.caption">Rezervuar choki — sifat nazorati</figcaption></figure>
   </div>
 </section>
 
@@ -416,7 +459,8 @@
 </section>
 
 <!-- ================= SAFETY ================= -->
-<section class="section section--alt" id="safety">
+<section class="section section--alt section--photo" id="safety">
+  <div class="section__photo" aria-hidden="true" style="background-image:url(assets/img/p-weld-in-vessel.jpg);background-position:center 35%"></div>
   <div class="container">
     <div class="section__head reveal" data-num="08">
       <p class="label" data-i18n="safety.label">08 — Xavfsizlik va sifat</p>
@@ -549,7 +593,9 @@
 
 <div class="lightbox" id="lightbox" hidden>
   <button class="lightbox__close" id="lightboxClose" aria-label="Yopish" data-i18n-aria-label="aria.lightboxClose">✕</button>
-  <figure><img id="lightboxImg" src="" alt=""><figcaption id="lightboxCap"></figcaption></figure>
+  <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Oldingi" data-i18n-aria-label="aria.lightboxPrev">‹</button>
+  <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Keyingi" data-i18n-aria-label="aria.lightboxNext">›</button>
+  <figure><img id="lightboxImg" src="" alt=""><figcaption id="lightboxCap"></figcaption><p class="lightbox__count" id="lightboxCount"></p></figure>
 </div>
 
 <!-- ================= FOOTER ================= -->

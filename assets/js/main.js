@@ -236,13 +236,12 @@
     galItems.forEach(fig => {
       const match = cat === 'all' || fig.dataset.cat === cat;
       fig.hidden = !match;
-      fig.classList.remove('is-filtering');
-      if (match) {
-        fig.style.setProperty('--gi', shown++);
-        if (!reduced) {
-          void fig.offsetWidth;
-          fig.classList.add('is-filtering');
-        }
+      if (!match) return;
+      fig.style.setProperty('--d', Math.min(shown++, 8));
+      if (!reduced) {
+        fig.classList.remove('in');
+        void fig.offsetWidth;
+        fig.classList.add('in');
       }
     });
     galFilter.querySelectorAll('.gal-chip').forEach(chip => {
@@ -273,7 +272,7 @@
     const img = fig.querySelector('img');
     lbImg.src = img.src;
     lbImg.alt = img.alt;
-    lbCap.textContent = fig.querySelector('figcaption').textContent;
+    lbCap.textContent = fig.querySelector('.gallery__cap').textContent;
     lbCount.textContent = (lbIndex + 1) + ' / ' + lbList.length;
     const solo = lbList.length < 2;
     lbPrev.hidden = solo;

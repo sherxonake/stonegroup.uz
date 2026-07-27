@@ -307,13 +307,28 @@
   /* ---------- lead form → mailto ---------- */
   const form = document.getElementById('leadForm');
   const ok = document.getElementById('formOk');
+  const phoneInput = form.querySelector('[name="phone"]');
+  const phoneErr = document.getElementById('phoneError');
+
+  const phoneValid = () => (String(phoneInput.value).match(/\d/g) || []).length >= 7;
+  const setPhoneError = show => {
+    phoneErr.hidden = !show;
+    phoneInput.setAttribute('aria-invalid', String(show));
+  };
+  phoneInput.addEventListener('blur', () => {
+    if (phoneInput.value.trim()) setPhoneError(!phoneValid());
+  });
+  phoneInput.addEventListener('input', () => { if (!phoneErr.hidden && phoneValid()) setPhoneError(false); });
+
   form.addEventListener('submit', e => {
     e.preventDefault();
     const f = new FormData(form);
-    if (!String(f.get('phone') || '').trim()) {
-      form.querySelector('[name="phone"]').focus();
+    if (!phoneValid()) {
+      setPhoneError(true);
+      phoneInput.focus();
       return;
     }
+    setPhoneError(false);
     const lines = [
       'Yangi ariza — stonegroup.uz',
       'Ism: ' + (f.get('name') || '—'),
